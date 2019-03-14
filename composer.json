@@ -1,33 +1,30 @@
 {
-    "name": "axios/aliyun-sdk-core",
-    "description": "SDK for aliyun service development",
-    "keywords": [
-        "aliyun",
-        "aliyun-service",
-        "aliyun-sdk"
-    ],
-    "homepage": "https://github.com/AxiosCros/aliyun-sdk-core",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Axios",
-            "email": "axioscros@aliyun.com"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/AxiosCros/aliyun-sdk-core/issues"
-    },
-    "require": {
-        "php": ">=7.1",
-        "guzzlehttp/guzzle": "^6.3",
-        "aliyuncs/oss-sdk-php": "~2.0",
-        "flc/dysms": "^1.0",
-        "axios/api-tool": "^1.1"
-    },
-    "require-dev": {},
-    "autoload": {
-        "psr-4": {
-            "aliyun\\sdk\\": "library"
-        }
+  "name": "axios/aliyun-sdk-core",
+  "description": "SDK for aliyun service development",
+  "keywords": [
+    "aliyun",
+    "aliyun-service",
+    "aliyun-sdk"
+  ],
+  "homepage": "https://github.com/AxiosCros/aliyun-sdk-core",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Axios",
+      "email": "axioscros@aliyun.com"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/AxiosCros/aliyun-sdk-core/issues"
+  },
+  "require": {
+    "php": ">=7.1",
+    "axios/api-tool": "^1.1"
+  },
+  "require-dev": {},
+  "autoload": {
+    "psr-4": {
+      "aliyun\\sdk\\": "library"
+    }
+  }
 }
