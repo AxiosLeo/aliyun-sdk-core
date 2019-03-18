@@ -23,6 +23,16 @@ class Endpoints
 
     private const CACHE_KEY = "aliyun_sdk_endpoints_cache_key";
 
+    public static function checkDomainExist($region_id, $product_name)
+    {
+        try {
+            self::domain($region_id, $product_name);
+            return true;
+        } catch (DomainNotExistException $e) {
+            return false;
+        }
+    }
+
     public static function domain($region_id, $product_name)
     {
         if (is_null(self::$instance)) {
