@@ -8,11 +8,10 @@
 
 namespace aliyun\sdk\core\traits;
 
-
 trait ClientTrait
 {
     /**
-     * @var \aliyun\sdk\core\http\Request
+     * @var \aliyun\sdk\core\lib\Request
      */
     private static $instance;
 
