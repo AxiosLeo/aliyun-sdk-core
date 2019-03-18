@@ -1,9 +1,9 @@
 <?php
 /**
- * @author: axios
+ * @author  : axios
  *
- * @email: axiosleo@foxmail.com
- * @blog:  http://hanxv.cn
+ * @email   : axiosleo@foxmail.com
+ * @blog    :  http://hanxv.cn
  * @datetime: 2018/2/9 16:20
  */
 
@@ -13,14 +13,18 @@ namespace aliyun\sdk\core\exception;
 class ClassNotFoundException extends \RuntimeException
 {
     protected $class;
+
     public function __construct($message, $class = '')
     {
         $this->message = $message;
         $this->class   = $class;
+
+        parent::__construct();
     }
 
     /**
      * 获取类名
+     *
      * @access public
      * @return string
      */

@@ -8,10 +8,9 @@
 
 namespace aliyun\sdk\core\exception;
 
-
 use Throwable;
 
-class RegionNotExistException extends \RuntimeException
+class DomainNotExistException extends \RuntimeException
 {
     public function __construct($message = "", $code = 0, Throwable $previous = null)
     {
