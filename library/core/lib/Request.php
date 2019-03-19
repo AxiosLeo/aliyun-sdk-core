@@ -14,7 +14,7 @@ use aliyun\sdk\core\credentials\AccessKeyCredential;
 use aliyun\sdk\core\credentials\CredentialsInterface;
 use api\tool\Http;
 use api\tool\lib\ArrayTool;
-use api\tool\Response;
+use api\tool\lib\HttpResponse;
 
 class Request
 {
@@ -56,7 +56,7 @@ class Request
     /**
      * @param CredentialsInterface|null $credentials
      *
-     * @return Response
+     * @return HttpResponse
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function request(CredentialsInterface $credentials = null)
