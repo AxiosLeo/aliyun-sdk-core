@@ -61,7 +61,7 @@ class AccessKeyCredential extends CredentialsAbstract
         return $this->params->get();
     }
 
-    public function guzzleHttpOptions(): array
+    public function guzzleHttpOptions()
     {
         return $this->options->get();
     }

@@ -19,5 +19,5 @@ interface CredentialsInterface
 
     public function params(): array;
 
-    public function guzzleHttpOptions(): array;
+    public function guzzleHttpOptions();
 }

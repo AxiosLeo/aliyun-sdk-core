@@ -19,5 +19,5 @@ abstract class CredentialsAbstract implements CredentialsInterface
 
     abstract public function params(): array;
 
-    abstract public function guzzleHttpOptions(): array;
+    abstract public function guzzleHttpOptions();
 }
