@@ -65,16 +65,19 @@ class Request
             $credentials = new AccessKeyCredential();
         }
 
-        if(empty($this->region)){
+        if (empty($this->region)) {
             $this->region = Aliyun::region();
         }
 
         $credentials->init($this);
         $domain = Endpoints::domain($this->region, $this->product);
 
-        $response = Http::instance()
-            ->setOption($credentials->guzzleHttpOptions())
-            ->setMethod($this->request_method)
+        $http              = Http::instance();
+        $guzzleHttpOptions = $credentials->guzzleHttpOptions();
+        if (!empty($guzzleHttpOptions)) {
+            $http->setOption($guzzleHttpOptions);
+        }
+        $response = $http->setMethod($this->request_method)
             ->setDomain($domain)
             ->setHeader($credentials->headers())
             ->setParam($credentials->params())
