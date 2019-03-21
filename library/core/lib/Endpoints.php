@@ -12,9 +12,7 @@ namespace aliyun\sdk\core\lib;
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\DomainNotExistException;
 use aliyun\sdk\core\sign\HmacSHA1;
-use aliyun\sdk\Option;
 use api\tool\Http;
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 class Endpoints
 {
@@ -24,8 +22,6 @@ class Endpoints
     private static $instance;
 
     private static $products = [];
-
-    private const CACHE_KEY = "aliyun_sdk_endpoints_cache_key";
 
     public static function checkDomainExist($region_id, $product_name)
     {
@@ -43,14 +39,6 @@ class Endpoints
             self::$instance = new self();
         }
 
-        if (empty(self::$products)) {
-            $products = self::$instance->cache();
-            if (false === $products) {
-                self::refreshDomainCache();
-            }
-            self::$products = $products;
-        }
-
         if (isset(self::$products[$product_name])) {
             if (isset(self::$products[$product_name][$region_id])) {
                 return self::$products[$product_name][$region_id];
@@ -62,36 +50,9 @@ class Endpoints
         return self::$instance->notFound($region_id, $product_name);
     }
 
-    public static function refreshDomainCache()
-    {
-        if (is_null(self::$instance)) {
-            self::$instance = new self();
-        }
-        $products = file_get_contents(Option::packagePath() . "data/products.json");
-        $products = json_decode($products, true);
-        self::$instance->cache($products);
-    }
-
     private function addDomain($region_id, $product_name, $domain)
     {
         self::$products[$product_name][$region_id] = $domain;
-        $this->cache(self::$products);
-    }
-
-    private function cache($products = null)
-    {
-        $cache = new FilesystemAdapter();
-        if (is_null($products)) {
-            if (!$cache->hasItem(self::CACHE_KEY)) {
-                return false;
-            }
-            $item = $cache->getItem(self::CACHE_KEY);
-            return $item->get();
-        }
-        $item = $cache->getItem(self::CACHE_KEY);
-        $item->set($products);
-        $cache->save($item);
-        return $products;
     }
 
     private function notFound($region_id = null, $product_name = null)
