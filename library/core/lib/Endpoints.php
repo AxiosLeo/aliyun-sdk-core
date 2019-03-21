@@ -17,6 +17,9 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 class Endpoints
 {
+    /**
+     * @var self
+     */
     private static $instance;
 
     private static $products = [];
@@ -42,9 +45,7 @@ class Endpoints
         if (empty(self::$products)) {
             $products = self::$instance->cache();
             if (false === $products) {
-                $products = file_get_contents(ALIYUN_SDK_PATH . "data/products.json");
-                $products = json_decode($products, true);
-                self::$instance->cache($products);
+                self::refreshDomainCache();
             }
             self::$products = $products;
         }
@@ -58,6 +59,13 @@ class Endpoints
         }
 
         return self::$instance->notFound($region_id, $product_name);
+    }
+
+    public static function refreshDomainCache()
+    {
+        $products = file_get_contents(ALIYUN_SDK_PATH . "data/products.json");
+        $products = json_decode($products, true);
+        self::$instance->cache($products);
     }
 
     private function addDomain($region_id, $product_name, $domain)
