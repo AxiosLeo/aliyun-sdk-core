@@ -12,6 +12,7 @@ namespace aliyun\sdk\core\lib;
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\DomainNotExistException;
 use aliyun\sdk\core\sign\HmacSHA1;
+use aliyun\sdk\Option;
 use api\tool\Http;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
@@ -63,7 +64,10 @@ class Endpoints
 
     public static function refreshDomainCache()
     {
-        $products = file_get_contents(ALIYUN_SDK_PATH . "data/products.json");
+        if (is_null(self::$instance)) {
+            self::$instance = new self();
+        }
+        $products = file_get_contents(Option::packagePath() . "data/products.json");
         $products = json_decode($products, true);
         self::$instance->cache($products);
     }

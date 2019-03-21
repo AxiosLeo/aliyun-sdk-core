@@ -8,8 +8,6 @@
 
 namespace aliyun\sdk;
 
-defined('ALIYUN_SDK_PATH') or define('ALIYUN_SDK_PATH', __DIR__ . DIRECTORY_SEPARATOR);
-
 class Aliyun
 {
     public static $access_key_id;

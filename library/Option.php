@@ -1,8 +1,8 @@
 <?php
 /**
- * @author: axios
- * @email: axiosleo@foxmail.com
- * @blog:  http://hanxv.cn
+ * @author  : axios
+ * @email   : axiosleo@foxmail.com
+ * @blog    :  http://hanxv.cn
  * @datetime: 2018/2/9 16:14
  */
 
@@ -45,5 +45,10 @@ class Option
     public static function list($index = '')
     {
         return self::options()->getChildKeyList($index);
+    }
+
+    public static function packagePath()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR;
     }
 }
