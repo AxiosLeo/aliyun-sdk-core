@@ -552,7 +552,7 @@
     "dds": "mongodb.aliyuncs.com",
     "slb": "slb.aliyuncs.com",
     "petadata": "petadata.aliyuncs.com",
-    "apigateway": "ping apigateway.us-west-1.aliyuncs.com",
+    "apigateway": "apigateway.us-west-1.aliyuncs.com",
     "redisa": "r-kvstore.aliyuncs.com",
     "eci": "eci.aliyuncs.com",
     "ess": "ess.aliyuncs.com",

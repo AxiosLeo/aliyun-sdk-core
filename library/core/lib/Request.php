@@ -70,7 +70,7 @@ class Request
         }
 
         $credentials->init($this);
-        $domain = Endpoints::domain($this->region, $this->product);
+        $domain = "https://" . Endpoints::domain($this->region, $this->product);
 
         $http              = Http::instance();
         $guzzleHttpOptions = $credentials->guzzleHttpOptions();
