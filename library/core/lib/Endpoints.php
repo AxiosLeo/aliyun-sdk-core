@@ -12,6 +12,7 @@ namespace aliyun\sdk\core\lib;
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\DomainNotExistException;
 use aliyun\sdk\core\sign\HmacSHA1;
+use aliyun\sdk\Option;
 use api\tool\Http;
 
 class Endpoints
@@ -37,6 +38,12 @@ class Endpoints
     {
         if (is_null(self::$instance)) {
             self::$instance = new self();
+        }
+
+        if(empty(self::$products)){
+            $products = file_get_contents(Option::packagePath() . "data/products.json");
+            $products = json_decode($products, true);
+            self::$products = $products;
         }
 
         if (isset(self::$products[$product_name])) {
