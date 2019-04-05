@@ -10,15 +10,15 @@ namespace aliyun\sdk;
 
 class Aliyun
 {
-    public static $access_key_id;
+    private static $access_key_id;
 
-    public static $access_secret;
+    private static $access_secret;
 
-    public static $security_token;
+    private static $security_token;
 
-    public static $region_id;
+    private static $region_id;
 
-    public static $response;
+    private static $response;
 
     /**
      * @param string $accessKeyId
@@ -34,8 +34,9 @@ class Aliyun
 
     public static function region($region_id = null)
     {
-        self::$region_id = is_null($region_id) ? self::$region_id : $region_id;
-
+        if (!is_null($region_id)) {
+            self::$region_id = $region_id;
+        }
         return self::$region_id;
     }
 
@@ -50,11 +51,25 @@ class Aliyun
 
     public static function getAccessKeyId($access_key_id = null)
     {
-        return is_null($access_key_id) ? Aliyun::$access_key_id : $access_key_id;
+        if (!is_null($access_key_id)) {
+            self::$access_key_id = $access_key_id;
+        }
+        return self::$access_key_id;
     }
 
     public static function getAccessSecret($access_secret = null)
     {
-        return is_null($access_secret) ? Aliyun::$access_secret : $access_secret;
+        if (!is_null($access_secret)) {
+            self::$access_secret = $access_secret;
+        }
+        return self::$access_secret;
+    }
+
+    public static function getSecurityToken($security_token = null)
+    {
+        if ($security_token) {
+            self::$security_token = $security_token;
+        }
+        return self::$security_token;
     }
 }
