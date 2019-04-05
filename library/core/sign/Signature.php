@@ -9,7 +9,6 @@
 
 namespace aliyun\sdk\core\sign;
 
-
 abstract class Signature
 {
     protected $headers;
@@ -17,6 +16,8 @@ abstract class Signature
     protected $params;
 
     protected $method;
+
+    protected $path;
 
     protected $params_string;
 
@@ -38,26 +39,22 @@ abstract class Signature
         return $this;
     }
 
-    protected function paramString()
+    public function setPath($path)
     {
-        //按参数名排序
-        ksort($this->params);
+        $this->path = $path;
+        return $this;
+    }
 
-        $param_string = "";
-        $n            = 0;
-        foreach ($this->params as $k => $v) {
-            //对参数名称和参数值进行 URL 编码
-            $k = rawurlencode($k);
-            $v = rawurlencode($v);
-            //对编码后的参数名称和值使用英文等号（=）进行连接
-            if ($n != 0) {
-                $param_string .= "&";
-            }
-            $param_string .= $k . "=" . $v;
-            $n++;
-        }
+    protected function hMacSha1($string, $key)
+    {
+        $signature = base64_encode(hash_hmac('sha1', $string, $key, true));
+        return $signature;
+    }
 
-        return $this->method . "&" . rawurlencode("/") . "&" . rawurlencode($param_string);
+    protected function hMacSha256($string, $key)
+    {
+        $signature = base64_encode(hash_hmac('sha256', $string, $key, true));
+        return $signature;
     }
 
     abstract public function getSign(): string;

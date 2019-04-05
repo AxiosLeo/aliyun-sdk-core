@@ -13,44 +13,95 @@ use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\credentials\AccessKeyCredential;
 use aliyun\sdk\core\credentials\CredentialsInterface;
 use api\tool\Http;
-use api\tool\lib\ArrayTool;
 use api\tool\lib\HttpResponse;
 
+/**
+ * Class Request
+ *
+ * @package aliyun\sdk\core\lib
+ * @method string product($product = null)
+ * @method string action($action = null)
+ * @method string region($region = null)
+ * @method string version($version = null)
+ * @method string method($method = null)
+ * @method string path($path = null)
+ * @method string domain($domain = null)
+ */
 class Request
 {
-    public $product = "";
+    protected $product = "";
 
-    public $action = "";
+    protected $action = "";
 
-    public $region = "";
+    protected $version = "";
 
-    public $version = "";
+    private $region = "";
 
-    public $params;
+    private $params = [];
 
-    public $headers;
+    private $headers = [];
 
-    public $options;
+    private $options = [];
 
-    private $request_method = "POST";
+    private $path = "/";
 
-    public $path = "/";
+    private $format = "JSON";
 
-    public $format = "JSON";
+    private $method = "POST";
 
-    public function __construct()
+    private $domain = "";
+
+    public function params($key = null, $value = null)
     {
-        $this->params  = ArrayTool::instance([]);
-        $this->headers = ArrayTool::instance([]);
-        $this->options = ArrayTool::instance([]);
+        if (is_null($key)) {
+            return $this->params;
+        }
+        if (is_array($key)) {
+            foreach ($key as $k => $v) {
+                $this->params[$k] = $v;
+            }
+        } else {
+            $this->params[$key] = $value;
+        }
+        return $this;
     }
 
-    public function method($method = null)
+    public function headers($key = null, $value = null)
     {
-        if (!is_null($method)) {
-            $this->request_method = $method;
+        if (is_null($key)) {
+            return $this->headers;
         }
-        return $this->request_method;
+        if (is_array($key)) {
+            foreach ($key as $k => $v) {
+                $this->headers[$k] = $v;
+            }
+        } else {
+            $this->headers[$key] = $value;
+        }
+        return $this;
+    }
+
+    public function options($key = null, $value = null)
+    {
+        if (is_null($key)) {
+            return $this->options;
+        }
+        if (is_array($key)) {
+            foreach ($key as $k => $v) {
+                $this->options[$k] = $v;
+            }
+        } else {
+            $this->options[$key] = $value;
+        }
+        return $this;
+    }
+
+    public function format($format = null)
+    {
+        if (!is_null($format)) {
+            $this->format = strtoupper($format);
+        }
+        return $this->format;
     }
 
     /**
@@ -70,19 +121,40 @@ class Request
         }
 
         $credentials->init($this);
-        $domain = Endpoints::domain($this->region, $this->product);
 
-        $http              = Http::instance();
-        $guzzleHttpOptions = $credentials->guzzleHttpOptions();
-        if (!empty($guzzleHttpOptions)) {
-            $http->setOption($guzzleHttpOptions);
-        }
-        $response = $http->setMethod($this->request_method)
-            ->setDomain($domain)
-            ->setHeader($credentials->headers())
-            ->setParam($credentials->params())
+        $response = Http::instance()->setMethod($this->method)
+            ->setOption($this->options)
+            ->setDomain($this->domain)
+            ->setHeader($this->headers)
+            ->setParam($this->params)
             ->curl($this->path);
 
         return Aliyun::response($response);
+    }
+
+    private function property($property, $value = null)
+    {
+        if (!is_null($value)) {
+            $this->$property = $value;
+        }
+        return $this->$property;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     *
+     * @return string
+     */
+    public function __call($name, $arguments)
+    {
+        $list = [
+            "product", "action", "version", "method", "path", "region", "domain"
+        ];
+        if (in_array($name, $list)) {
+            array_unshift($arguments, $name);
+            return call_user_func_array([$this, "property"], $arguments);
+        }
+        return "";
     }
 }

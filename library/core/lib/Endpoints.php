@@ -11,7 +11,7 @@ namespace aliyun\sdk\core\lib;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\DomainNotExistException;
-use aliyun\sdk\core\sign\HmacSHA1;
+use aliyun\sdk\core\sign\DefaultSignature;
 use aliyun\sdk\Option;
 use api\tool\Http;
 
@@ -40,9 +40,9 @@ class Endpoints
             self::$instance = new self();
         }
 
-        if(empty(self::$products)){
-            $products = file_get_contents(Option::packagePath() . "data/products.json");
-            $products = json_decode($products, true);
+        if (empty(self::$products)) {
+            $products       = file_get_contents(Option::packagePath() . "data/products.json");
+            $products       = json_decode($products, true);
             self::$products = $products;
         }
 
@@ -87,7 +87,7 @@ class Endpoints
             "ServiceCode"      => $product,
             "Type"             => "openAPI",
             "RegionId"         => "cn-hangzhou",
-            "AccessKeyId"      => Aliyun::$access_key_id,
+            "AccessKeyId"      => Aliyun::getAccessKeyId(),
             "Format"           => "JSON",
             "SignatureMethod"  => "HMAC-SHA1",
             "SignatureVersion" => "1.0",
@@ -97,10 +97,8 @@ class Endpoints
             "Version"          => "2015-06-12"
         ];
 
-        $HmacSha1  = new HmacSHA1();
-        $signature = $HmacSha1->setParams($param)->setMethod("get")->getSign();
-
-        $param["Signature"] = $signature;
+        $DefaultSignature   = new DefaultSignature();
+        $param["Signature"] = $DefaultSignature->setParams($param)->setMethod("get")->getSign();
 
         $response = Http::instance()->setDomain("location.aliyuncs.com")
             ->setMethod("GET")
