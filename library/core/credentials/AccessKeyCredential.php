@@ -11,6 +11,7 @@ namespace aliyun\sdk\core\credentials;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\help\SignatureNonce;
+use aliyun\sdk\core\lib\Endpoints;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\DefaultSignature;
 
@@ -31,5 +32,7 @@ class AccessKeyCredential implements CredentialsInterface
         $request->params("Signature", $DefaultSignature->setParams($request->params())
             ->setMethod($request->method())
             ->getSign());
+
+        $request->domain(Endpoints::domain($request->region(), $request->product()));
     }
 }
