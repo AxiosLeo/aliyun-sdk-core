@@ -1,0 +1,22 @@
+{
+    "ap-northeast-1": "product-catalog.aliyuncs.com",
+    "ap-south-1": "product-catalog.aliyuncs.com",
+    "ap-southeast-1": "product-catalog.aliyuncs.com",
+    "ap-southeast-2": "product-catalog.aliyuncs.com",
+    "ap-southeast-3": "product-catalog.aliyuncs.com",
+    "ap-southeast-5": "product-catalog.aliyuncs.com",
+    "cn-beijing": "product-catalog.aliyuncs.com",
+    "cn-chengdu": "product-catalog.aliyuncs.com",
+    "cn-hangzhou": "product-catalog.aliyuncs.com",
+    "cn-hongkong": "product-catalog.aliyuncs.com",
+    "cn-huhehaote": "product-catalog.aliyuncs.com",
+    "cn-qingdao": "product-catalog.aliyuncs.com",
+    "cn-shanghai": "product-catalog.aliyuncs.com",
+    "cn-shenzhen": "product-catalog.aliyuncs.com",
+    "cn-zhangjiakou": "product-catalog.aliyuncs.com",
+    "eu-central-1": "product-catalog.aliyuncs.com",
+    "eu-west-1": "product-catalog.aliyuncs.com",
+    "me-east-1": "product-catalog.aliyuncs.com",
+    "us-east-1": "product-catalog.aliyuncs.com",
+    "us-west-1": "product-catalog.aliyuncs.com"
+}

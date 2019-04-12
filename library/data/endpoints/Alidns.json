@@ -1,0 +1,22 @@
+{
+    "ap-northeast-1": "dns.aliyuncs.com",
+    "ap-south-1": "dns.aliyuncs.com",
+    "ap-southeast-1": "dns.aliyuncs.com",
+    "ap-southeast-2": "dns.aliyuncs.com",
+    "ap-southeast-3": "dns.aliyuncs.com",
+    "ap-southeast-5": "dns.aliyuncs.com",
+    "cn-beijing": "dns.aliyuncs.com",
+    "cn-chengdu": "dns.aliyuncs.com",
+    "cn-hangzhou": "dns.aliyuncs.com",
+    "cn-hongkong": "dns.aliyuncs.com",
+    "cn-huhehaote": "dns.aliyuncs.com",
+    "cn-qingdao": "dns.aliyuncs.com",
+    "cn-shanghai": "dns.aliyuncs.com",
+    "cn-shenzhen": "dns.aliyuncs.com",
+    "cn-zhangjiakou": "dns.aliyuncs.com",
+    "eu-central-1": "dns.aliyuncs.com",
+    "eu-west-1": "dns.aliyuncs.com",
+    "me-east-1": "dns.aliyuncs.com",
+    "us-east-1": "dns.aliyuncs.com",
+    "us-west-1": "dns.aliyuncs.com"
+}

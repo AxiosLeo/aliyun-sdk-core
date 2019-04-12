@@ -1,0 +1,22 @@
+{
+    "ap-northeast-1": "yq-bridge.aliyuncs.com",
+    "ap-south-1": "yq-bridge.aliyuncs.com",
+    "ap-southeast-1": "yq-bridge.aliyuncs.com",
+    "ap-southeast-2": "yq-bridge.aliyuncs.com",
+    "ap-southeast-3": "yq-bridge.aliyuncs.com",
+    "ap-southeast-5": "yq-bridge.aliyuncs.com",
+    "cn-beijing": "yq-bridge.aliyuncs.com",
+    "cn-chengdu": "yq-bridge.aliyuncs.com",
+    "cn-hangzhou": "yq-bridge.aliyuncs.com",
+    "cn-hongkong": "yq-bridge.aliyuncs.com",
+    "cn-huhehaote": "yq-bridge.aliyuncs.com",
+    "cn-qingdao": "yq-bridge.aliyuncs.com",
+    "cn-shanghai": "yq-bridge.aliyuncs.com",
+    "cn-shenzhen": "yq-bridge.aliyuncs.com",
+    "cn-zhangjiakou": "yq-bridge.aliyuncs.com",
+    "eu-central-1": "yq-bridge.aliyuncs.com",
+    "eu-west-1": "yq-bridge.aliyuncs.com",
+    "me-east-1": "yq-bridge.aliyuncs.com",
+    "us-east-1": "yq-bridge.aliyuncs.com",
+    "us-west-1": "yq-bridge.aliyuncs.com"
+}

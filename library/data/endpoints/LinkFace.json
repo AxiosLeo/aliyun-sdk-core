@@ -1,0 +1,22 @@
+{
+    "ap-northeast-1": "iotx-face.aliyuncs.com",
+    "ap-south-1": "iotx-face.aliyuncs.com",
+    "ap-southeast-1": "iotx-face.aliyuncs.com",
+    "ap-southeast-2": "iotx-face.aliyuncs.com",
+    "ap-southeast-3": "iotx-face.aliyuncs.com",
+    "ap-southeast-5": "iotx-face.aliyuncs.com",
+    "cn-beijing": "iotx-face.aliyuncs.com",
+    "cn-chengdu": "iotx-face.aliyuncs.com",
+    "cn-hangzhou": "iotx-face.cn-hangzhou.aliyuncs.com",
+    "cn-hongkong": "iotx-face.aliyuncs.com",
+    "cn-huhehaote": "iotx-face.aliyuncs.com",
+    "cn-qingdao": "iotx-face.aliyuncs.com",
+    "cn-shanghai": "iotx-face.cn-shanghai.aliyuncs.com",
+    "cn-shenzhen": "iotx-face.aliyuncs.com",
+    "cn-zhangjiakou": "iotx-face.aliyuncs.com",
+    "eu-central-1": "iotx-face.aliyuncs.com",
+    "eu-west-1": "iotx-face.aliyuncs.com",
+    "me-east-1": "iotx-face.aliyuncs.com",
+    "us-east-1": "iotx-face.aliyuncs.com",
+    "us-west-1": "iotx-face.aliyuncs.com"
+}

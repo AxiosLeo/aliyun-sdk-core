@@ -1,0 +1,22 @@
+{
+    "ap-northeast-1": "eci.aliyuncs.com",
+    "ap-south-1": "eci.aliyuncs.com",
+    "ap-southeast-1": "eci.aliyuncs.com",
+    "ap-southeast-2": "eci.aliyuncs.com",
+    "ap-southeast-3": "eci.aliyuncs.com",
+    "ap-southeast-5": "eci.aliyuncs.com",
+    "cn-beijing": "eci.aliyuncs.com",
+    "cn-chengdu": "eci.aliyuncs.com",
+    "cn-hangzhou": "eci.aliyuncs.com",
+    "cn-hongkong": "eci.aliyuncs.com",
+    "cn-huhehaote": "eci.aliyuncs.com",
+    "cn-qingdao": "eci.aliyuncs.com",
+    "cn-shanghai": "eci.aliyuncs.com",
+    "cn-shenzhen": "eci.aliyuncs.com",
+    "cn-zhangjiakou": "eci.aliyuncs.com",
+    "eu-central-1": "eci.aliyuncs.com",
+    "eu-west-1": "eci.aliyuncs.com",
+    "me-east-1": "eci.aliyuncs.com",
+    "us-east-1": "eci.aliyuncs.com",
+    "us-west-1": "eci.aliyuncs.com"
+}
