@@ -22,7 +22,7 @@ class Endpoints
      */
     private static $instance;
 
-    private static $products = [];
+    private static $endpoints = [];
 
     public static function checkDomainExist($region_id, $product_name)
     {
@@ -40,18 +40,19 @@ class Endpoints
             self::$instance = new self();
         }
 
-        if (empty(self::$products)) {
-            $products       = file_get_contents(Option::packagePath() . "data/products.json");
-            $products       = json_decode($products, true);
-            self::$products = $products;
-        }
+        if (!isset(self::$endpoints[$product_name])) {
+            $path = Option::packagePath() . "data/endpoints/" . $product_name . ".json";
+            if (file_exists($path)) {
+                $products = file_get_contents($path);
+                $products = json_decode($products, true);
 
-        if (isset(self::$products[$product_name])) {
-            if (isset(self::$products[$product_name][$region_id])) {
-                return self::$products[$product_name][$region_id];
-            } else {
-                return self::$instance->notFound($region_id, $product_name);
+                self::$endpoints[$product_name] = $products;
+                if (isset($products[$region_id])) {
+                    return $products[$region_id];
+                }
             }
+        } else if (isset(self::$endpoints[$product_name][$region_id])) {
+            return self::$endpoints[$product_name][$region_id];
         }
 
         return self::$instance->notFound($region_id, $product_name);
@@ -59,7 +60,10 @@ class Endpoints
 
     private function addDomain($region_id, $product_name, $domain)
     {
-        self::$products[$product_name][$region_id] = $domain;
+        if (!isset(self::$endpoints[$product_name])) {
+            self::$endpoints[$product_name] = [];
+        }
+        self::$endpoints[$product_name][$region_id] = $domain;
     }
 
     private function notFound($region_id = null, $product_name = null)
