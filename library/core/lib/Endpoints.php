@@ -24,6 +24,32 @@ class Endpoints
 
     private static $endpoints = [];
 
+    public static function endpoints($product_name)
+    {
+        if (!isset(self::$endpoints[$product_name])) {
+            $path = Option::packagePath() . "data/endpoints/" . $product_name . ".json";
+            if (file_exists($path)) {
+                $products = file_get_contents($path);
+                $products = json_decode($products, true);
+
+                self::$endpoints[$product_name] = $products;
+            } else {
+                self::$endpoints[$product_name] = [];
+            }
+        }
+        return self::$endpoints[$product_name];
+    }
+
+    public static function getSupportedRegionIdList($product_name, $glue = ",")
+    {
+        $endpoints = self::endpoints($product_name);
+        $list      = [];
+        foreach ($endpoints as $region_id => $endpoint) {
+            array_push($list, $region_id);
+        }
+        return implode($glue, $list);
+    }
+
     public static function checkDomainExist($region_id, $product_name)
     {
         try {
@@ -40,19 +66,9 @@ class Endpoints
             self::$instance = new self();
         }
 
-        if (!isset(self::$endpoints[$product_name])) {
-            $path = Option::packagePath() . "data/endpoints/" . $product_name . ".json";
-            if (file_exists($path)) {
-                $products = file_get_contents($path);
-                $products = json_decode($products, true);
-
-                self::$endpoints[$product_name] = $products;
-                if (isset($products[$region_id])) {
-                    return $products[$region_id];
-                }
-            }
-        } else if (isset(self::$endpoints[$product_name][$region_id])) {
-            return self::$endpoints[$product_name][$region_id];
+        $endpoints = self::endpoints($product_name);
+        if (isset($endpoints[$region_id])) {
+            return $endpoints[$region_id];
         }
 
         return self::$instance->notFound($region_id, $product_name);
