@@ -26,7 +26,7 @@ class UnsupportedRegionIdException extends \RuntimeException
         } else {
             $message = "Unsupported RegionId:" . $region_id . " ; ";
         }
-        $message  .= " The List of Supported RegionId is : " . Endpoints::getSupportedRegionIdList($product);
+        $message  .= " The List of Supported RegionId is : " . Endpoints::getSupportedRegionIdList($product) . ".\n";
         $code     = 400;
         $previous = null;
         parent::__construct($message, $code, $previous);
