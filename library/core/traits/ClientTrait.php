@@ -8,28 +8,33 @@
 
 namespace aliyun\sdk\core\traits;
 
+use aliyun\sdk\core\lib\Request;
+
 trait ClientTrait
 {
     /**
-     * @var \aliyun\sdk\core\lib\Request
+     * @var Request
      */
-    private static $instance;
+    private static $clientInstance;
 
-    private static $action_name;
+    /**
+     * @var Request[]
+     */
+    private static $actionInstance = [];
 
-    public static function action($action_name)
+    public static function __callStatic($name, $arguments)
     {
-        if (is_null(self::$instance) || self::$action_name != $action_name) {
-            self::$action_name = $action_name;
-            self::$instance    = new self();
+        if (is_null(self::$clientInstance)) {
+            self::$clientInstance = new self();
         }
 
-        return self::$instance;
-    }
+        if (!isset(self::$actionInstance[$name])) {
+            $class = self::$clientInstance->container;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setActionName(self::$action_name);
+            self::$actionInstance[$name] = new $class();
+            self::$actionInstance[$name]->action($name);
+        }
+
+        return self::$actionInstance[$name];
     }
 }
