@@ -8,17 +8,17 @@
 
 namespace aliyun\sdk\core\traits;
 
-use aliyun\sdk\core\lib\Request;
+use aliyun\sdk\core\lib\ClientInterface;
 
 trait ClientTrait
 {
     /**
-     * @var Request
+     * @var ClientInterface
      */
     private static $clientInstance;
 
     /**
-     * @var Request[]
+     * @var ClientInterface[]
      */
     private static $actionInstance = [];
 
@@ -32,9 +32,15 @@ trait ClientTrait
             $class = self::$clientInstance->container;
 
             self::$actionInstance[$name] = new $class();
-            self::$actionInstance[$name]->action($name);
+            self::$actionInstance[$name]->initAction($name);
         }
 
         return self::$actionInstance[$name];
+    }
+
+    public function initAction($action_name)
+    {
+        $this->action($action_name);
+        $this->version($this->action_list[$action_name]);
     }
 }

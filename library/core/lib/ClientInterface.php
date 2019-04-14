@@ -10,7 +10,5 @@ namespace aliyun\sdk\core\lib;
 
 interface ClientInterface
 {
-    public static function action($action_name);
-
-    public function __construct($action_name);
+    public function initAction($action_name);
 }
