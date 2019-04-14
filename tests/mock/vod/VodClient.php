@@ -9,6 +9,7 @@
 
 namespace aliyun\sdk\tests\mock\vod;
 
+use aliyun\sdk\core\lib\ClientInterface;
 use aliyun\sdk\core\lib\Request;
 
 /**
@@ -17,13 +18,11 @@ use aliyun\sdk\core\lib\Request;
  * @package aliyun\sdk\tests\mock\vod
  * @method GetCategories GetCategories() static
  */
-class VodClient extends Request
+class VodClient extends Request implements ClientInterface
 {
     use \aliyun\sdk\core\traits\ClientTrait;
 
     protected $product = 'Vod';
-
-    protected $version = '2017-03-21';
 
     protected $method = "POST";
 
@@ -45,6 +44,10 @@ class VodClient extends Request
         "me-east-1"      => "vod.ap-northeast-1.aliyuncs.com",
         "us-east-1"      => "vod.ap-northeast-1.aliyuncs.com",
         "us-west-1"      => "vod.ap-northeast-1.aliyuncs.com"
+    ];
+
+    protected $action_list = [
+        "GetCategories" => "2017-03-21"
     ];
 
     /**
