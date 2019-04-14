@@ -12,6 +12,7 @@ namespace aliyun\sdk\core\lib;
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\credentials\AccessKeyCredential;
 use aliyun\sdk\core\credentials\CredentialsInterface;
+use aliyun\sdk\core\traits\ActionTrait;
 use api\tool\Http;
 use api\tool\lib\HttpResponse;
 
@@ -29,6 +30,8 @@ use api\tool\lib\HttpResponse;
  */
 class Request
 {
+    use ActionTrait;
+
     protected $product = "";
 
     protected $action = "";
@@ -49,7 +52,9 @@ class Request
 
     private $method = "POST";
 
-    private $domain = "";
+    protected $domain = "";
+
+    public $endpoints = [];
 
     public function params($key = null, $value = null)
     {
@@ -132,29 +137,11 @@ class Request
         return Aliyun::response($response);
     }
 
-    private function property($property, $value = null)
+    protected function property($property, $value = null)
     {
         if (!is_null($value)) {
             $this->$property = $value;
         }
         return $this->$property;
-    }
-
-    /**
-     * @param $name
-     * @param $arguments
-     *
-     * @return string
-     */
-    public function __call($name, $arguments)
-    {
-        $list = [
-            "product", "action", "version", "method", "path", "region", "domain"
-        ];
-        if (in_array($name, $list)) {
-            array_unshift($arguments, $name);
-            return call_user_func_array([$this, "property"], $arguments);
-        }
-        return "";
     }
 }
