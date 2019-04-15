@@ -22,10 +22,8 @@ abstract class CredentialsAbstract implements CredentialsInterface
             if (!empty($endpoints)) {
                 if (isset($endpoints[$request->region()])) {
                     $request->domain($endpoints[$request->region()]);
-                } else if (isset($endpoints["global"]) && count($endpoints) == 1) {
-                    $request->domain($endpoints["global"]);
                 } else {
-                    throw new UnsupportedRegionIdException($request->product(), $request->region());
+                    throw new UnsupportedRegionIdException($request->product(), $request->region(), $endpoints);
                 }
             } else {
                 $request->domain(Endpoints::domain($request->region(), $request->product()));

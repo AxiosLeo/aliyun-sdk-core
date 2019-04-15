@@ -9,8 +9,6 @@
 
 namespace aliyun\sdk\core\exception;
 
-use aliyun\sdk\core\lib\Endpoints;
-
 class UnsupportedRegionIdException extends \RuntimeException
 {
     protected $endpoints;
@@ -19,16 +17,25 @@ class UnsupportedRegionIdException extends \RuntimeException
 
     protected $product;
 
-    public function __construct($product, $region_id)
+    public function __construct($product, $region_id, $endpoints)
     {
         if (empty($region_id)) {
             $message = "RegionId cannot be empty ! please fixed error with this code : Aliyun::region(<region_id>; ";
         } else {
             $message = "Unsupported RegionId:" . $region_id . " ; ";
         }
-        $message  .= " The List of Supported RegionId is : " . Endpoints::getSupportedRegionIdList($product) . ".\n";
+        $message  .= " (" . $product . ") List of Supported RegionId : " . $this->getSupportedRegionIdList($endpoints) . ".\n";
         $code     = 400;
         $previous = null;
         parent::__construct($message, $code, $previous);
+    }
+
+    private function getSupportedRegionIdList($endpoints, $glue = ",")
+    {
+        $list = [];
+        foreach ($endpoints as $region_id => $endpoint) {
+            array_push($list, $region_id);
+        }
+        return implode($glue, $list);
     }
 }

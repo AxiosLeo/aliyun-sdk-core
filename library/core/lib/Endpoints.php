@@ -40,16 +40,6 @@ class Endpoints
         return self::$endpoints[$product_name];
     }
 
-    public static function getSupportedRegionIdList($product_name, $glue = ",")
-    {
-        $endpoints = self::endpoints($product_name);
-        $list      = [];
-        foreach ($endpoints as $region_id => $endpoint) {
-            array_push($list, $region_id);
-        }
-        return implode($glue, $list);
-    }
-
     public static function checkDomainExist($region_id, $product_name)
     {
         try {
