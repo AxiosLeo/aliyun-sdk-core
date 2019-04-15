@@ -9,26 +9,26 @@
 
 namespace aliyun\sdk\tests\mock\vod;
 
-use aliyun\sdk\core\lib\ClientInterface;
-use aliyun\sdk\core\lib\Request;
-
 /**
  * Class VodCommon
  *
  * @package aliyun\sdk\tests\mock\vod
- * @method GetCategories GetCategories() static
+ * @method GetCategories GetCategories()
  */
-class VodClient extends Request implements ClientInterface
+class VodClient
 {
-    use \aliyun\sdk\core\traits\ClientTrait;
+    protected $product = "Vod";
 
-    protected $product = 'Vod';
+    protected $actionClient = "VodAction";
 
-    protected $method = "POST";
+    /**
+     * @var VodAction[]
+     */
+    protected $instance;
 
-    protected $domain = "";
+    protected $version;
 
-    public $endpoints = [
+    protected $endpoints = [
         "global"         => "vod.aliyuncs.com",
         "ap-northeast-1" => "vod.ap-northeast-1.aliyuncs.com",
         "ap-south-1"     => "vod.ap-northeast-1.aliyuncs.com",
@@ -46,12 +46,17 @@ class VodClient extends Request implements ClientInterface
         "us-west-1"      => "vod.ap-northeast-1.aliyuncs.com"
     ];
 
-    protected $action_list = [
-        "GetCategories" => "2017-03-21"
-    ];
+    public function __construct($version)
+    {
+        $this->version = $version;
+    }
 
-    /**
-     * @var string
-     */
-    protected $container = VodAction::class;
+    public function __call($action, $arguments)
+    {
+        if (is_null($this->instance)) {
+            $class                   = __NAMESPACE__ . "\\" . $this->actionClient;
+            $this->instance[$action] = new $class($this->product, $this->endpoints, $this->version, $action);
+        }
+        return $this->instance[$action];
+    }
 }

@@ -9,6 +9,10 @@
 
 namespace aliyun\sdk\tests\mock\vod;
 
-class VodAction extends VodClient
+use aliyun\sdk\core\lib\Request;
+use aliyun\sdk\core\traits\ActionTrait;
+
+class VodAction extends Request
 {
+    use ActionTrait;
 }

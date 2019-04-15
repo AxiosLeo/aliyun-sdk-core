@@ -9,6 +9,8 @@
 
 namespace aliyun\sdk\tests\mock\vod;
 
+use aliyun\sdk\core\lib\Request;
+
 /**
  * @method $this setCateId($CateId)
  * @method integer getCateId()
@@ -19,7 +21,7 @@ namespace aliyun\sdk\tests\mock\vod;
  * @method $this setSortBy($SortBy)
  * @method string getSortBy()
  */
-class GetCategories extends VodAction
+class GetCategories extends Request
 {
 
 }
