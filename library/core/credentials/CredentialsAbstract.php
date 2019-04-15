@@ -18,11 +18,12 @@ abstract class CredentialsAbstract implements CredentialsInterface
     public function setDomain(Request &$request)
     {
         if (empty($request->domain())) {
-            if (!empty($request->endpoints)) {
-                if (isset($request->endpoints[$request->region()])) {
-                    $request->domain($request->endpoints[$request->region()]);
-                } else if (isset($request->endpoints["global"]) && count($request->endpoints) == 1) {
-                    $request->domain($request->endpoints["global"]);
+            $endpoints = $request->endpoints();
+            if (!empty($endpoints)) {
+                if (isset($endpoints[$request->region()])) {
+                    $request->domain($endpoints[$request->region()]);
+                } else if (isset($endpoints["global"]) && count($endpoints) == 1) {
+                    $request->domain($endpoints["global"]);
                 } else {
                     throw new UnsupportedRegionIdException($request->product(), $request->region());
                 }

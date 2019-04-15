@@ -27,6 +27,7 @@ use api\tool\lib\HttpResponse;
  * @method string method($method = null)
  * @method string path($path = null)
  * @method string domain($domain = null)
+ * @method array  endpoints()
  */
 class Request
 {
@@ -38,7 +39,7 @@ class Request
 
     protected $version = "";
 
-    private $region = "";
+    protected $region = "";
 
     private $params = [];
 
@@ -54,20 +55,17 @@ class Request
 
     protected $domain = "";
 
-    public $endpoints = [];
+    protected $endpoints = [];
 
     public function params($key = null, $value = null)
     {
         if (is_null($key)) {
             return $this->params;
         }
-        if (is_array($key)) {
-            foreach ($key as $k => $v) {
-                $this->params[$k] = $v;
-            }
-        } else {
-            $this->params[$key] = $value;
+        if (is_null($value)) {
+            return isset($this->params[$key]) ? $this->params[$key] : null;
         }
+        $this->params[$key] = $value;
         return $this;
     }
 
@@ -76,13 +74,7 @@ class Request
         if (is_null($key)) {
             return $this->headers;
         }
-        if (is_array($key)) {
-            foreach ($key as $k => $v) {
-                $this->headers[$k] = $v;
-            }
-        } else {
-            $this->headers[$key] = $value;
-        }
+        $this->headers[$key] = $value;
         return $this;
     }
 
@@ -91,13 +83,7 @@ class Request
         if (is_null($key)) {
             return $this->options;
         }
-        if (is_array($key)) {
-            foreach ($key as $k => $v) {
-                $this->options[$k] = $v;
-            }
-        } else {
-            $this->options[$key] = $value;
-        }
+        $this->options[$key] = $value;
         return $this;
     }
 
