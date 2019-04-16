@@ -1,19 +1,17 @@
 <?php
-/**
- * @author  : axios
- *
- * @email   : axiosleo@foxmail.com
- * @blog    : http://hanxv.cn
- * @datetime: 2019-04-15 09:39
- */
 
 namespace aliyun\sdk\tests\mock\vod;
 
 /**
  * Class Vod
  *
- * @package aliyun\sdk\tests\mock\vod
+ * @package aliyun\sdk\services\vod
+ * @method VodClient V20170713() static
+ * @method VodClient V20170510() static
+ * @method VodClient V20170426() static
+ * @method VodClient V20170420() static
  * @method VodClient V20170321() static
+ * @method VodClient V20170314() static
  */
 class Vod
 {
