@@ -5,13 +5,13 @@ namespace aliyun\sdk\tests\mock\vod;
 /**
  * Class Vod
  *
- * @package aliyun\sdk\services\vod
- * @method VodClient V20170713() static
- * @method VodClient V20170510() static
- * @method VodClient V20170426() static
- * @method VodClient V20170420() static
- * @method VodClient V20170321() static
- * @method VodClient V20170314() static
+ * @package aliyun\sdk\tests\mock\vod
+ * @method \aliyun\sdk\tests\mock\vod\version20170713\V20170713 V20170713() static
+ * @method \aliyun\sdk\tests\mock\vod\version20170510\V20170510 V20170510() static
+ * @method \aliyun\sdk\tests\mock\vod\version20170426\V20170426 V20170426() static
+ * @method \aliyun\sdk\tests\mock\vod\version20170420\V20170420 V20170420() static
+ * @method \aliyun\sdk\tests\mock\vod\version20170321\V20170321 V20170321() static
+ * @method \aliyun\sdk\tests\mock\vod\version20170314\V20170314 V20170314() static
  */
 class Vod
 {
