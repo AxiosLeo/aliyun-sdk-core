@@ -9,12 +9,7 @@ use aliyun\sdk\core\traits\ProductTrait;
  * Class Vod
  *
  * @package aliyun\sdk\tests\mock\vod
- * @method \aliyun\sdk\tests\mock\vod\version20170713\V20170713 V20170713() static
- * @method \aliyun\sdk\tests\mock\vod\version20170510\V20170510 V20170510() static
- * @method \aliyun\sdk\tests\mock\vod\version20170426\V20170426 V20170426() static
- * @method \aliyun\sdk\tests\mock\vod\version20170420\V20170420 V20170420() static
  * @method \aliyun\sdk\tests\mock\vod\version20170321\V20170321 V20170321() static
- * @method \aliyun\sdk\tests\mock\vod\version20170314\V20170314 V20170314() static
  */
 class Vod extends ProductAbstract
 {
@@ -22,12 +17,32 @@ class Vod extends ProductAbstract
 
     protected $product = "vod";
 
+    protected $credential = "AccessKeyCredential";
+
     protected $endpoints = [
-        "regions" => [
+        "regions"  => [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-5",
+            "cn-beijing",
+            "cn-chengdu",
             "cn-hangzhou",
-            "cn-shanghai"
+            "cn-hongkong",
+            "cn-huhehaote",
+            "cn-qingdao",
+            "cn-shanghai",
+            "cn-shenzhen",
+            "cn-zhangjiakou",
+            "eu-central-1",
+            "eu-west-1",
+            "me-east-1",
+            "us-east-1",
+            "us-west-1",
         ],
-        "public"  => [
+        "public"   => [
             "ap-northeast-1" => "vod.ap-northeast-1.aliyuncs.com",
             "ap-south-1"     => "vod.ap-northeast-1.aliyuncs.com",
             "ap-southeast-1" => "vod.ap-southeast-1.aliyuncs.com",
@@ -48,10 +63,8 @@ class Vod extends ProductAbstract
             "me-east-1"      => "vod.ap-northeast-1.aliyuncs.com",
             "us-east-1"      => "vod.ap-northeast-1.aliyuncs.com",
             "us-west-1"      => "vod.ap-northeast-1.aliyuncs.com",
+        ],
+        "internal" => [
         ]
     ];
-
-    protected $version;
-
-    protected $credential = "AccessKeyCredential";
 }
