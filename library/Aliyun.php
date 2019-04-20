@@ -20,6 +20,8 @@ class Aliyun
 
     private static $response;
 
+    public static $internal = false;
+
     /**
      * @param string $accessKeyId
      * @param string $accessSecret
@@ -32,11 +34,18 @@ class Aliyun
         self::$security_token = is_null($security_token) ? md5('SignatureNonce' . uniqid(md5(microtime(true)), true)) : $security_token;
     }
 
-    public static function region($region_id = null)
+    /**
+     * @param null $region_id
+     * @param bool $internal vpc网络为内部网络 $internal = true
+     *
+     * @return null
+     */
+    public static function region($region_id = null, $internal = false)
     {
         if (!is_null($region_id)) {
             self::$region_id = $region_id;
         }
+        self::$internal = $internal;
         return self::$region_id;
     }
 
