@@ -29,7 +29,7 @@ abstract class CredentialsAbstract implements CredentialsInterface
     {
         $this->endpoints    = $request->endpoints();
         $this->product      = $request->product();
-        $this->service_code = $request->service_code;
+        $this->service_code = $request->serviceCode();
         $this->region_id    = $request->region();
 
         if (empty($request->domain())) {
