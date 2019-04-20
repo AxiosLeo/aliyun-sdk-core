@@ -30,6 +30,10 @@ class AccessKeyCredential extends CredentialsAbstract
         $request->params("Timestamp", gmdate("Y-m-d\TH:i:s\Z"));
         $request->params("SignatureNonce", SignatureNonce::get("SignatureNonce"));
 
+        if (!empty(Aliyun::getSecurityToken())) {
+            $request->params("SecurityToken", Aliyun::getSecurityToken());
+        }
+
         $DefaultSignature = new DefaultSignature();
         $request->params("Signature", $DefaultSignature->setParams($request->params())
             ->setMethod($request->method())
