@@ -2,10 +2,11 @@
 
 namespace aliyun\sdk\tests\mock\vod\version20170321;
 
-use aliyun\sdk\tests\mock\vod\VodAction;
+use aliyun\sdk\core\lib\Request;
 
 /**
  * Class V20170321
+ *
  * @package aliyun\sdk\tests\mock\vod\version20170321
  * @method UpdateMaterial UpdateMaterial()
  * @method GetOSSFlowStatis GetOSSFlowStatis()
@@ -263,7 +264,6 @@ use aliyun\sdk\tests\mock\vod\VodAction;
  * @method GetAIService GetAIService()
  * @method DescribeVodAIData DescribeVodAIData()
  * @method AddWatermark AddWatermark()
-
  */
 class V20170321
 {
@@ -286,7 +286,7 @@ class V20170321
  * @method $this setCateId($cateId)
  * @method int getCateId()
  */
-class UpdateMaterial extends VodAction
+class UpdateMaterial extends Request
 {
 
 }
@@ -307,7 +307,7 @@ class UpdateMaterial extends VodAction
  * @method $this setDivision($division)
  * @method string getDivision()
  */
-class GetOSSFlowStatis extends VodAction
+class GetOSSFlowStatis extends Request
 {
 
 }
@@ -318,7 +318,7 @@ class GetOSSFlowStatis extends VodAction
  * @method $this setArea($area)
  * @method string getArea()
  */
-class DescribeVodUserBillPrediction extends VodAction
+class DescribeVodUserBillPrediction extends Request
 {
 
 }
@@ -335,7 +335,7 @@ class DescribeVodUserBillPrediction extends VodAction
  * @method $this setLocationNameEn($locName)
  * @method string getLocationNameEn()
  */
-class DescribeVodDomainRealTimeHttpCodeData extends VodAction
+class DescribeVodDomainRealTimeHttpCodeData extends Request
 {
 
 }
@@ -348,7 +348,7 @@ class DescribeVodDomainRealTimeHttpCodeData extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeReqHitRateData extends VodAction
+class DescribeVodDomainRealTimeReqHitRateData extends Request
 {
 
 }
@@ -361,7 +361,7 @@ class DescribeVodDomainRealTimeReqHitRateData extends VodAction
  * @method $this setStorageLocation($storageLocation)
  * @method string getStorageLocation()
  */
-class GetStorageInfo extends VodAction
+class GetStorageInfo extends Request
 {
 
 }
@@ -374,7 +374,7 @@ class GetStorageInfo extends VodAction
  * @method $this setType($type)
  * @method string getType()
  */
-class AddCategory extends VodAction
+class AddCategory extends Request
 {
 
 }
@@ -383,7 +383,7 @@ class AddCategory extends VodAction
  * @method $this setTranscodeTemplateGroupId($transcodeTemplateGroupId)
  * @method string getTranscodeTemplateGroupId()
  */
-class SetDefaultTranscodeTemplateGroup extends VodAction
+class SetDefaultTranscodeTemplateGroup extends Request
 {
 
 }
@@ -398,7 +398,7 @@ class SetDefaultTranscodeTemplateGroup extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoPornRecogJob extends VodAction
+class SubmitAIVideoPornRecogJob extends Request
 {
 
 }
@@ -407,7 +407,7 @@ class SubmitAIVideoPornRecogJob extends VodAction
  * @method $this setDomainName($domainName)
  * @method string getDomainName()
  */
-class DescribeVodDomainDetail extends VodAction
+class DescribeVodDomainDetail extends Request
 {
 
 }
@@ -418,7 +418,7 @@ class DescribeVodDomainDetail extends VodAction
  * @method $this setUpdateContent($updateContent)
  * @method string getUpdateContent()
  */
-class UpdateAttachedMediaInfos extends VodAction
+class UpdateAttachedMediaInfos extends Request
 {
 
 }
@@ -437,7 +437,7 @@ class UpdateAttachedMediaInfos extends VodAction
  * @method $this setCoverURL($coverUrl)
  * @method string getCoverURL()
  */
-class UpdateEditingProject extends VodAction
+class UpdateEditingProject extends Request
 {
 
 }
@@ -446,7 +446,7 @@ class UpdateEditingProject extends VodAction
  * @method $this setDomainNames($domainNames)
  * @method string getDomainNames()
  */
-class BatchStartVodDomain extends VodAction
+class BatchStartVodDomain extends Request
 {
 
 }
@@ -459,7 +459,7 @@ class BatchStartVodDomain extends VodAction
  * @method $this setTypes($types)
  * @method string getTypes()
  */
-class SetAIService extends VodAction
+class SetAIService extends Request
 {
 
 }
@@ -476,7 +476,7 @@ class SetAIService extends VodAction
  * @method $this setPageNo($pageNo)
  * @method string getPageNo()
  */
-class ListSnapshots extends VodAction
+class ListSnapshots extends Request
 {
 
 }
@@ -487,7 +487,7 @@ class ListSnapshots extends VodAction
  * @method $this setIsContainsTemplates($containTemplates)
  * @method bool getIsContainsTemplates()
  */
-class ListTemplateGroupConsole extends VodAction
+class ListTemplateGroupConsole extends Request
 {
 
 }
@@ -498,7 +498,7 @@ class ListTemplateGroupConsole extends VodAction
  * @method $this setCateId($cateId)
  * @method int getCateId()
  */
-class UpdateCategory extends VodAction
+class UpdateCategory extends Request
 {
 
 }
@@ -507,7 +507,7 @@ class UpdateCategory extends VodAction
  * @method $this setObjectPath($objectPath)
  * @method string getObjectPath()
  */
-class PreloadVodObjectCaches extends VodAction
+class PreloadVodObjectCaches extends Request
 {
 
 }
@@ -520,7 +520,7 @@ class PreloadVodObjectCaches extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeUserTimeRangeByDay extends VodAction
+class DescribeUserTimeRangeByDay extends Request
 {
 
 }
@@ -533,7 +533,7 @@ class DescribeUserTimeRangeByDay extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRegionData extends VodAction
+class DescribeVodDomainRegionData extends Request
 {
 
 }
@@ -544,7 +544,7 @@ class DescribeVodDomainRegionData extends VodAction
  * @method $this setObjectType($objectType)
  * @method string getObjectType()
  */
-class RefreshVodObjectCaches extends VodAction
+class RefreshVodObjectCaches extends Request
 {
 
 }
@@ -557,7 +557,7 @@ class RefreshVodObjectCaches extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeByteHitRateData extends VodAction
+class DescribeVodDomainRealTimeByteHitRateData extends Request
 {
 
 }
@@ -578,7 +578,7 @@ class DescribeVodDomainRealTimeByteHitRateData extends VodAction
  * @method $this setTags($tags)
  * @method string getTags()
  */
-class CreateUploadMaterial extends VodAction
+class CreateUploadMaterial extends Request
 {
 
 }
@@ -595,7 +595,7 @@ class CreateUploadMaterial extends VodAction
  * @method $this setPageNo($pageNo)
  * @method int getPageNo()
  */
-class ListTranscodeTask extends VodAction
+class ListTranscodeTask extends Request
 {
 
 }
@@ -614,7 +614,7 @@ class ListTranscodeTask extends VodAction
  * @method $this setDivision($projectRegion)
  * @method string getDivision()
  */
-class AddEditingProject extends VodAction
+class AddEditingProject extends Request
 {
 
 }
@@ -629,7 +629,7 @@ class AddEditingProject extends VodAction
  * @method $this setTopLevelDomain($topLevelDomain)
  * @method string getTopLevelDomain()
  */
-class UpdateVodDomain extends VodAction
+class UpdateVodDomain extends Request
 {
 
 }
@@ -640,7 +640,7 @@ class UpdateVodDomain extends VodAction
  * @method $this setAIVideoCoverJobIds($jobIds)
  * @method string getAIVideoCoverJobIds()
  */
-class ListAIVideoCoverJob extends VodAction
+class ListAIVideoCoverJob extends Request
 {
 
 }
@@ -669,7 +669,7 @@ class ListAIVideoCoverJob extends VodAction
  * @method $this setTitle($title)
  * @method string getTitle()
  */
-class SearchMaterial extends VodAction
+class SearchMaterial extends Request
 {
 
 }
@@ -678,7 +678,7 @@ class SearchMaterial extends VodAction
  * @method $this setDomainName($domain)
  * @method string getDomainName()
  */
-class DescribeVodDomainCertificateInfo extends VodAction
+class DescribeVodDomainCertificateInfo extends Request
 {
 
 }
@@ -691,7 +691,7 @@ class DescribeVodDomainCertificateInfo extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainsUsageByDay extends VodAction
+class DescribeVodDomainsUsageByDay extends Request
 {
 
 }
@@ -706,7 +706,7 @@ class DescribeVodDomainsUsageByDay extends VodAction
  * @method $this setTemplateConfig($templateConfig)
  * @method string getTemplateConfig()
  */
-class AddVodTemplate extends VodAction
+class AddVodTemplate extends Request
 {
 
 }
@@ -719,7 +719,7 @@ class AddVodTemplate extends VodAction
  * @method $this setMaterialIds($materialIds)
  * @method string getMaterialIds()
  */
-class SetEditingProjectMaterials extends VodAction
+class SetEditingProjectMaterials extends Request
 {
 
 }
@@ -748,7 +748,7 @@ class SetEditingProjectMaterials extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class SetMessageCallback extends VodAction
+class SetMessageCallback extends Request
 {
 
 }
@@ -757,7 +757,7 @@ class SetMessageCallback extends VodAction
  * @method $this setWatermarkId($watertempId)
  * @method string getWatermarkId()
  */
-class DeleteWatermarkConsole extends VodAction
+class DeleteWatermarkConsole extends Request
 {
 
 }
@@ -768,7 +768,7 @@ class DeleteWatermarkConsole extends VodAction
  * @method $this setUploadURLs($uploadUrls)
  * @method string getUploadURLs()
  */
-class GetURLUploadInfos extends VodAction
+class GetURLUploadInfos extends Request
 {
 
 }
@@ -779,7 +779,7 @@ class GetURLUploadInfos extends VodAction
  * @method $this setConfigs($configs)
  * @method string getConfigs()
  */
-class UpdateCustomTemplateAndGroupConsole extends VodAction
+class UpdateCustomTemplateAndGroupConsole extends Request
 {
 
 }
@@ -788,7 +788,7 @@ class UpdateCustomTemplateAndGroupConsole extends VodAction
  * @method $this setMediaId($mediaId)
  * @method string getMediaId()
  */
-class GetMediaAuditResultTimeline extends VodAction
+class GetMediaAuditResultTimeline extends Request
 {
 
 }
@@ -811,7 +811,7 @@ class GetMediaAuditResultTimeline extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class ProduceEditingProjectVideo extends VodAction
+class ProduceEditingProjectVideo extends Request
 {
 
 }
@@ -824,7 +824,7 @@ class ProduceEditingProjectVideo extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeUserVvByVideoid extends VodAction
+class DescribeUserVvByVideoid extends Request
 {
 
 }
@@ -837,7 +837,7 @@ class DescribeUserVvByVideoid extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class ListAppPoliciesForIdentity extends VodAction
+class ListAppPoliciesForIdentity extends Request
 {
 
 }
@@ -848,7 +848,7 @@ class ListAppPoliciesForIdentity extends VodAction
  * @method $this setAppDecryptKey($appDecryptKey)
  * @method string getAppDecryptKey()
  */
-class GenerateDownloadSecretKey extends VodAction
+class GenerateDownloadSecretKey extends Request
 {
 
 }
@@ -861,7 +861,7 @@ class GenerateDownloadSecretKey extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeSrcBpsData extends VodAction
+class DescribeVodDomainRealTimeSrcBpsData extends Request
 {
 
 }
@@ -872,7 +872,7 @@ class DescribeVodDomainRealTimeSrcBpsData extends VodAction
  * @method $this setProjectIds($projectIdStr)
  * @method string getProjectIds()
  */
-class DeleteEditingProject extends VodAction
+class DeleteEditingProject extends Request
 {
 
 }
@@ -889,7 +889,7 @@ class DeleteEditingProject extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIJob extends VodAction
+class SubmitAIJob extends Request
 {
 
 }
@@ -914,7 +914,7 @@ class SubmitAIJob extends VodAction
  * @method $this setPrefix($prefix)
  * @method string getPrefix()
  */
-class AssumeOssRole extends VodAction
+class AssumeOssRole extends Request
 {
 
 }
@@ -925,7 +925,7 @@ class AssumeOssRole extends VodAction
  * @method $this setAuthInfo($authInfo)
  * @method string getAuthInfo()
  */
-class GetVideoConfig extends VodAction
+class GetVideoConfig extends Request
 {
 
 }
@@ -940,7 +940,7 @@ class GetVideoConfig extends VodAction
  * @method $this setInterval($interval)
  * @method string getInterval()
  */
-class DescribeVodDomainSrcBpsData extends VodAction
+class DescribeVodDomainSrcBpsData extends Request
 {
 
 }
@@ -957,7 +957,7 @@ class DescribeVodDomainSrcBpsData extends VodAction
  * @method $this setMediaSequences($mediaSequences)
  * @method string getMediaSequences()
  */
-class AddMediaSequences extends VodAction
+class AddMediaSequences extends Request
 {
 
 }
@@ -972,7 +972,7 @@ class AddMediaSequences extends VodAction
  * @method $this setSortBy($sortBy)
  * @method string getSortBy()
  */
-class GetAuditHistory extends VodAction
+class GetAuditHistory extends Request
 {
 
 }
@@ -983,7 +983,7 @@ class GetAuditHistory extends VodAction
  * @method $this setPreprocessType($preprocessType)
  * @method string getPreprocessType()
  */
-class SubmitPreprocessJobsConsole extends VodAction
+class SubmitPreprocessJobsConsole extends Request
 {
 
 }
@@ -992,7 +992,7 @@ class SubmitPreprocessJobsConsole extends VodAction
  * @method $this setDomainName($domainName)
  * @method string getDomainName()
  */
-class DescribeVodDomainCname extends VodAction
+class DescribeVodDomainCname extends Request
 {
 
 }
@@ -1007,7 +1007,7 @@ class DescribeVodDomainCname extends VodAction
  * @method $this setLevel($level)
  * @method string getLevel()
  */
-class GetCDNStatis extends VodAction
+class GetCDNStatis extends Request
 {
 
 }
@@ -1018,7 +1018,7 @@ class GetCDNStatis extends VodAction
  * @method $this setAIVideoPornRecogJobIds($jobIds)
  * @method string getAIVideoPornRecogJobIds()
  */
-class ListAIVideoPornRecogJob extends VodAction
+class ListAIVideoPornRecogJob extends Request
 {
 
 }
@@ -1031,7 +1031,7 @@ class ListAIVideoPornRecogJob extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class GetMessageCallback extends VodAction
+class GetMessageCallback extends Request
 {
 
 }
@@ -1044,7 +1044,7 @@ class GetMessageCallback extends VodAction
  * @method $this setAdditionType($additionType)
  * @method string getAdditionType()
  */
-class GetVideoInfo extends VodAction
+class GetVideoInfo extends Request
 {
 
 }
@@ -1053,7 +1053,7 @@ class GetVideoInfo extends VodAction
  * @method $this setTemplateType($templateType)
  * @method string getTemplateType()
  */
-class ListAITemplate extends VodAction
+class ListAITemplate extends Request
 {
 
 }
@@ -1062,7 +1062,7 @@ class ListAITemplate extends VodAction
  * @method $this setVodTemplateId($vodTemplateId)
  * @method string getVodTemplateId()
  */
-class SetDefaultVodTemplate extends VodAction
+class SetDefaultVodTemplate extends Request
 {
 
 }
@@ -1071,7 +1071,7 @@ class SetDefaultVodTemplate extends VodAction
  * @method $this setDomainName($domainName)
  * @method string getDomainName()
  */
-class StartVodDomain extends VodAction
+class StartVodDomain extends Request
 {
 
 }
@@ -1082,7 +1082,7 @@ class StartVodDomain extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class GetMessageCallbackEventList extends VodAction
+class GetMessageCallbackEventList extends Request
 {
 
 }
@@ -1093,7 +1093,7 @@ class GetMessageCallbackEventList extends VodAction
  * @method $this setJobIds($jobIds)
  * @method string getJobIds()
  */
-class ListAIJob extends VodAction
+class ListAIJob extends Request
 {
 
 }
@@ -1106,7 +1106,7 @@ class ListAIJob extends VodAction
  * @method $this setObjectType($objectType)
  * @method string getObjectType()
  */
-class RefreshObjectCaches extends VodAction
+class RefreshObjectCaches extends Request
 {
 
 }
@@ -1115,7 +1115,7 @@ class RefreshObjectCaches extends VodAction
  * @method $this setOwnerAccount($ownerAccount)
  * @method string getOwnerAccount()
  */
-class CreateOrder extends VodAction
+class CreateOrder extends Request
 {
 
 }
@@ -1124,7 +1124,7 @@ class CreateOrder extends VodAction
  * @method $this setTemplateId($templateId)
  * @method string getTemplateId()
  */
-class SetDefaultAITemplate extends VodAction
+class SetDefaultAITemplate extends Request
 {
 
 }
@@ -1139,7 +1139,7 @@ class SetDefaultAITemplate extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoCoverJob extends VodAction
+class SubmitAIVideoCoverJob extends Request
 {
 
 }
@@ -1148,7 +1148,7 @@ class SubmitAIVideoCoverJob extends VodAction
  * @method $this setVideoIds($videoIds)
  * @method string getVideoIds()
  */
-class GetTranscodeSummary extends VodAction
+class GetTranscodeSummary extends Request
 {
 
 }
@@ -1159,7 +1159,7 @@ class GetTranscodeSummary extends VodAction
  * @method $this setAIASRJobIds($jobIds)
  * @method string getAIASRJobIds()
  */
-class ListAIASRJob extends VodAction
+class ListAIASRJob extends Request
 {
 
 }
@@ -1174,7 +1174,7 @@ class ListAIASRJob extends VodAction
  * @method $this setMediaType($mediaType)
  * @method string getMediaType()
  */
-class DeleteMultipartUpload extends VodAction
+class DeleteMultipartUpload extends Request
 {
 
 }
@@ -1187,7 +1187,7 @@ class DeleteMultipartUpload extends VodAction
  * @method $this setDescription($description)
  * @method string getDescription()
  */
-class CreateAppPolicy extends VodAction
+class CreateAppPolicy extends Request
 {
 
 }
@@ -1202,7 +1202,7 @@ class CreateAppPolicy extends VodAction
  * @method $this setOutputType($outputType)
  * @method string getOutputType()
  */
-class GetAttachedMediaInfo extends VodAction
+class GetAttachedMediaInfo extends Request
 {
 
 }
@@ -1215,7 +1215,7 @@ class GetAttachedMediaInfo extends VodAction
  * @method $this setTemplateConfig($templateConfig)
  * @method string getTemplateConfig()
  */
-class AddAITemplate extends VodAction
+class AddAITemplate extends Request
 {
 
 }
@@ -1228,7 +1228,7 @@ class AddAITemplate extends VodAction
  * @method $this setForceDelGroup($forceDelGroup)
  * @method string getForceDelGroup()
  */
-class DeleteTranscodeTemplateGroup extends VodAction
+class DeleteTranscodeTemplateGroup extends Request
 {
 
 }
@@ -1239,7 +1239,7 @@ class DeleteTranscodeTemplateGroup extends VodAction
  * @method $this setAIVideoTagJobIds($jobIds)
  * @method string getAIVideoTagJobIds()
  */
-class ListAIVideoTagJob extends VodAction
+class ListAIVideoTagJob extends Request
 {
 
 }
@@ -1248,7 +1248,7 @@ class ListAIVideoTagJob extends VodAction
  * @method $this setAuditContent($auditContent)
  * @method string getAuditContent()
  */
-class CreateAudit extends VodAction
+class CreateAudit extends Request
 {
 
 }
@@ -1263,7 +1263,7 @@ class CreateAudit extends VodAction
  * @method $this setLevel($level)
  * @method string getLevel()
  */
-class GetCDNStatisSum extends VodAction
+class GetCDNStatisSum extends Request
 {
 
 }
@@ -1272,7 +1272,7 @@ class GetCDNStatisSum extends VodAction
  * @method $this setWorkflowId($workflowId)
  * @method string getWorkflowId()
  */
-class GetWorkflow extends VodAction
+class GetWorkflow extends Request
 {
 
 }
@@ -1283,7 +1283,7 @@ class GetWorkflow extends VodAction
  * @method $this setAppIds($appIds)
  * @method string getAppIds()
  */
-class GetAppInfos extends VodAction
+class GetAppInfos extends Request
 {
 
 }
@@ -1298,7 +1298,7 @@ class GetAppInfos extends VodAction
  * @method $this setResourceIds($resourceIds)
  * @method string getResourceIds()
  */
-class MoveAppResource extends VodAction
+class MoveAppResource extends Request
 {
 
 }
@@ -1311,7 +1311,7 @@ class MoveAppResource extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainUvData extends VodAction
+class DescribeVodDomainUvData extends Request
 {
 
 }
@@ -1330,7 +1330,7 @@ class DescribeVodDomainUvData extends VodAction
  * @method $this setPriority($priority)
  * @method string getPriority()
  */
-class SubmitTranscodeJobs extends VodAction
+class SubmitTranscodeJobs extends Request
 {
 
 }
@@ -1345,7 +1345,7 @@ class SubmitTranscodeJobs extends VodAction
  * @method $this setStorageACL($storageACL)
  * @method string getStorageACL()
  */
-class SetStorageACL extends VodAction
+class SetStorageACL extends Request
 {
 
 }
@@ -1368,7 +1368,7 @@ class SetStorageACL extends VodAction
  * @method $this setStorageLocation($storageLocation)
  * @method string getStorageLocation()
  */
-class GetVideoList extends VodAction
+class GetVideoList extends Request
 {
 
 }
@@ -1383,7 +1383,7 @@ class GetVideoList extends VodAction
  * @method $this setInterval($interval)
  * @method string getInterval()
  */
-class DescribeVodDomainSrcTrafficData extends VodAction
+class DescribeVodDomainSrcTrafficData extends Request
 {
 
 }
@@ -1398,7 +1398,7 @@ class DescribeVodDomainSrcTrafficData extends VodAction
  * @method $this setMediaType($mediaType)
  * @method string getMediaType()
  */
-class GetAuditResult extends VodAction
+class GetAuditResult extends Request
 {
 
 }
@@ -1415,7 +1415,7 @@ class GetAuditResult extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainLog extends VodAction
+class DescribeVodDomainLog extends Request
 {
 
 }
@@ -1426,7 +1426,7 @@ class DescribeVodDomainLog extends VodAction
  * @method $this setCommand($command)
  * @method string getCommand()
  */
-class ControlVodAppService extends VodAction
+class ControlVodAppService extends Request
 {
 
 }
@@ -1439,7 +1439,7 @@ class ControlVodAppService extends VodAction
  * @method $this setPageSize($pageSize)
  * @method int getPageSize()
  */
-class DescribePlayTopVideos extends VodAction
+class DescribePlayTopVideos extends Request
 {
 
 }
@@ -1450,7 +1450,7 @@ class DescribePlayTopVideos extends VodAction
  * @method $this setAIVideoCensorJobIds($jobIds)
  * @method string getAIVideoCensorJobIds()
  */
-class ListAIVideoCensorJob extends VodAction
+class ListAIVideoCensorJob extends Request
 {
 
 }
@@ -1477,7 +1477,7 @@ class ListAIVideoCensorJob extends VodAction
  * @method $this setPageNumber($pageNumber)
  * @method int getPageNumber()
  */
-class DescribeRefreshTasks extends VodAction
+class DescribeRefreshTasks extends Request
 {
 
 }
@@ -1486,7 +1486,7 @@ class DescribeRefreshTasks extends VodAction
  * @method $this setOwnerAccount($ownerAccount)
  * @method string getOwnerAccount()
  */
-class OpenVodService extends VodAction
+class OpenVodService extends Request
 {
 
 }
@@ -1495,7 +1495,7 @@ class OpenVodService extends VodAction
  * @method $this setWatermarkId($watertempId)
  * @method string getWatermarkId()
  */
-class SetDefaultWatermark extends VodAction
+class SetDefaultWatermark extends Request
 {
 
 }
@@ -1508,7 +1508,7 @@ class SetDefaultWatermark extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeUserVvByDay extends VodAction
+class DescribeUserVvByDay extends Request
 {
 
 }
@@ -1527,7 +1527,7 @@ class DescribeUserVvByDay extends VodAction
  * @method $this setImageIds($imageIds)
  * @method string getImageIds()
  */
-class FaceRegistration extends VodAction
+class FaceRegistration extends Request
 {
 
 }
@@ -1538,7 +1538,7 @@ class FaceRegistration extends VodAction
  * @method $this setAIVideoTerrorismRecogJobIds($jobIds)
  * @method string getAIVideoTerrorismRecogJobIds()
  */
-class ListAIVideoTerrorismRecogJob extends VodAction
+class ListAIVideoTerrorismRecogJob extends Request
 {
 
 }
@@ -1549,7 +1549,7 @@ class ListAIVideoTerrorismRecogJob extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class GetWatermarkConsole extends VodAction
+class GetWatermarkConsole extends Request
 {
 
 }
@@ -1560,7 +1560,7 @@ class GetWatermarkConsole extends VodAction
  * @method $this setForce($force)
  * @method bool getForce()
  */
-class DeleteMezzanines extends VodAction
+class DeleteMezzanines extends Request
 {
 
 }
@@ -1577,7 +1577,7 @@ class DeleteMezzanines extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method string getResourceRealOwnerId()
  */
-class AttachAppPolicyToIdentity extends VodAction
+class AttachAppPolicyToIdentity extends Request
 {
 
 }
@@ -1588,7 +1588,7 @@ class AttachAppPolicyToIdentity extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribePlayUserTotal extends VodAction
+class DescribePlayUserTotal extends Request
 {
 
 }
@@ -1603,7 +1603,7 @@ class DescribePlayUserTotal extends VodAction
  * @method $this setInterval($interval)
  * @method string getInterval()
  */
-class DescribeVodDomainHttpCodeData extends VodAction
+class DescribeVodDomainHttpCodeData extends Request
 {
 
 }
@@ -1612,7 +1612,7 @@ class DescribeVodDomainHttpCodeData extends VodAction
  * @method $this setUpdateContent($updateContent)
  * @method string getUpdateContent()
  */
-class UpdateVideoInfos extends VodAction
+class UpdateVideoInfos extends Request
 {
 
 }
@@ -1639,7 +1639,7 @@ class UpdateVideoInfos extends VodAction
  * @method $this setFuncFilter($funcFilter)
  * @method string getFuncFilter()
  */
-class DescribeVodUserDomains extends VodAction
+class DescribeVodUserDomains extends Request
 {
 
 }
@@ -1650,7 +1650,7 @@ class DescribeVodUserDomains extends VodAction
  * @method $this setAdditionType($additionType)
  * @method string getAdditionType()
  */
-class GetVideoInfos extends VodAction
+class GetVideoInfos extends Request
 {
 
 }
@@ -1663,7 +1663,7 @@ class GetVideoInfos extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeTrafficData extends VodAction
+class DescribeVodDomainRealTimeTrafficData extends Request
 {
 
 }
@@ -1676,7 +1676,7 @@ class DescribeVodDomainRealTimeTrafficData extends VodAction
  * @method $this setDescription($description)
  * @method string getDescription()
  */
-class UpdateAppPolicy extends VodAction
+class UpdateAppPolicy extends Request
 {
 
 }
@@ -1689,7 +1689,7 @@ class UpdateAppPolicy extends VodAction
  * @method $this setEditConfig($editConfig)
  * @method string getEditConfig()
  */
-class EditVideoIndexFile extends VodAction
+class EditVideoIndexFile extends Request
 {
 
 }
@@ -1698,7 +1698,7 @@ class EditVideoIndexFile extends VodAction
  * @method $this setVideoIds($videoIds)
  * @method string getVideoIds()
  */
-class SyncMaterial extends VodAction
+class SyncMaterial extends Request
 {
 
 }
@@ -1711,7 +1711,7 @@ class SyncMaterial extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeUserAvgCountByDay extends VodAction
+class DescribeUserAvgCountByDay extends Request
 {
 
 }
@@ -1722,7 +1722,7 @@ class DescribeUserAvgCountByDay extends VodAction
  * @method $this setUpdateContent($updateContent)
  * @method string getUpdateContent()
  */
-class UpdateImageInfos extends VodAction
+class UpdateImageInfos extends Request
 {
 
 }
@@ -1737,7 +1737,7 @@ class UpdateImageInfos extends VodAction
  * @method $this setStorageType($storageType)
  * @method string getStorageType()
  */
-class DescribeVodStorageData extends VodAction
+class DescribeVodStorageData extends Request
 {
 
 }
@@ -1752,7 +1752,7 @@ class DescribeVodStorageData extends VodAction
  * @method $this setMaterialType($materialType)
  * @method string getMaterialType()
  */
-class AddEditingProjectMaterials extends VodAction
+class AddEditingProjectMaterials extends Request
 {
 
 }
@@ -1763,7 +1763,7 @@ class AddEditingProjectMaterials extends VodAction
  * @method $this setProjectId($projectId)
  * @method string getProjectId()
  */
-class GetEditingProject extends VodAction
+class GetEditingProject extends Request
 {
 
 }
@@ -1774,7 +1774,7 @@ class GetEditingProject extends VodAction
  * @method $this setFunctionNames($functionNames)
  * @method string getFunctionNames()
  */
-class DescribeVodDomainConfigs extends VodAction
+class DescribeVodDomainConfigs extends Request
 {
 
 }
@@ -1793,7 +1793,7 @@ class DescribeVodDomainConfigs extends VodAction
  * @method $this setLocationNameEn($locName)
  * @method string getLocationNameEn()
  */
-class DescribeVodDomainHitRateData extends VodAction
+class DescribeVodDomainHitRateData extends Request
 {
 
 }
@@ -1806,7 +1806,7 @@ class DescribeVodDomainHitRateData extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainISPData extends VodAction
+class DescribeVodDomainISPData extends Request
 {
 
 }
@@ -1817,7 +1817,7 @@ class DescribeVodDomainISPData extends VodAction
  * @method $this setObjectPath($objectPath)
  * @method string getObjectPath()
  */
-class PushObjectCache extends VodAction
+class PushObjectCache extends Request
 {
 
 }
@@ -1858,7 +1858,7 @@ class PushObjectCache extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class AddWatermarkConsole extends VodAction
+class AddWatermarkConsole extends Request
 {
 
 }
@@ -1899,7 +1899,7 @@ class AddWatermarkConsole extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class UpdateWatermarkConsole extends VodAction
+class UpdateWatermarkConsole extends Request
 {
 
 }
@@ -1912,7 +1912,7 @@ class UpdateWatermarkConsole extends VodAction
  * @method $this setPageSize($pageSize)
  * @method int getPageSize()
  */
-class ListAppPolicy extends VodAction
+class ListAppPolicy extends Request
 {
 
 }
@@ -1927,7 +1927,7 @@ class ListAppPolicy extends VodAction
  * @method $this setMaterialType($materialType)
  * @method string getMaterialType()
  */
-class GetEditingProjectMaterials extends VodAction
+class GetEditingProjectMaterials extends Request
 {
 
 }
@@ -1936,7 +1936,7 @@ class GetEditingProjectMaterials extends VodAction
  * @method $this setVodTemplateId($vodTemplateId)
  * @method string getVodTemplateId()
  */
-class GetVodTemplate extends VodAction
+class GetVodTemplate extends Request
 {
 
 }
@@ -1945,7 +1945,7 @@ class GetVodTemplate extends VodAction
  * @method $this setCateId($cateId)
  * @method int getCateId()
  */
-class DeleteCategory extends VodAction
+class DeleteCategory extends Request
 {
 
 }
@@ -1954,7 +1954,7 @@ class DeleteCategory extends VodAction
  * @method $this setMediaIds($mediaIds)
  * @method string getMediaIds()
  */
-class DeleteAttachedMedia extends VodAction
+class DeleteAttachedMedia extends Request
 {
 
 }
@@ -1973,7 +1973,7 @@ class DeleteAttachedMedia extends VodAction
  * @method $this setField($field)
  * @method string getField()
  */
-class DescribeVodDomainUsageData extends VodAction
+class DescribeVodDomainUsageData extends Request
 {
 
 }
@@ -1986,7 +1986,7 @@ class DescribeVodDomainUsageData extends VodAction
  * @method $this setWatermarkConfig($watermarkConfig)
  * @method string getWatermarkConfig()
  */
-class UpdateWatermark extends VodAction
+class UpdateWatermark extends Request
 {
 
 }
@@ -1997,7 +1997,7 @@ class UpdateWatermark extends VodAction
  * @method $this setTranscodeTemplateIdList($transcodeTemplateIdList)
  * @method string getTranscodeTemplateIdList()
  */
-class DeleteTranscodeTemplates extends VodAction
+class DeleteTranscodeTemplates extends Request
 {
 
 }
@@ -2008,7 +2008,7 @@ class DeleteTranscodeTemplates extends VodAction
  * @method $this setMaterialIds($materialIdStr)
  * @method string getMaterialIds()
  */
-class DeleteMaterial extends VodAction
+class DeleteMaterial extends Request
 {
 
 }
@@ -2017,7 +2017,7 @@ class DeleteMaterial extends VodAction
  * @method $this setTranscodeTaskId($transcodeProcessId)
  * @method string getTranscodeTaskId()
  */
-class GetTranscodeTask extends VodAction
+class GetTranscodeTask extends Request
 {
 
 }
@@ -2066,7 +2066,7 @@ class GetTranscodeTask extends VodAction
  * @method $this setUploadAddress($uploadAddress)
  * @method string getUploadAddress()
  */
-class ReportUploadProgress extends VodAction
+class ReportUploadProgress extends Request
 {
 
 }
@@ -2089,7 +2089,7 @@ class ReportUploadProgress extends VodAction
  * @method $this setDivision($division)
  * @method string getDivision()
  */
-class GetStorageList extends VodAction
+class GetStorageList extends Request
 {
 
 }
@@ -2098,7 +2098,7 @@ class GetStorageList extends VodAction
  * @method $this setTemplateId($templateId)
  * @method string getTemplateId()
  */
-class DeleteAITemplate extends VodAction
+class DeleteAITemplate extends Request
 {
 
 }
@@ -2109,7 +2109,7 @@ class DeleteAITemplate extends VodAction
  * @method $this setMediaId($mediaId)
  * @method string getMediaId()
  */
-class GetMediaDNAResult extends VodAction
+class GetMediaDNAResult extends Request
 {
 
 }
@@ -2136,7 +2136,7 @@ class GetMediaDNAResult extends VodAction
  * @method $this setResourceGroupId($resourceGroupId)
  * @method string getResourceGroupId()
  */
-class DescribeVodRefreshTasks extends VodAction
+class DescribeVodRefreshTasks extends Request
 {
 
 }
@@ -2153,7 +2153,7 @@ class DescribeVodRefreshTasks extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method string getResourceRealOwnerId()
  */
-class AddStorage extends VodAction
+class AddStorage extends Request
 {
 
 }
@@ -2174,7 +2174,7 @@ class AddStorage extends VodAction
  * @method $this setDivision($division)
  * @method string getDivision()
  */
-class GetOSSStatis extends VodAction
+class GetOSSStatis extends Request
 {
 
 }
@@ -2189,7 +2189,7 @@ class GetOSSStatis extends VodAction
  * @method $this setTranscodeTemplateGroupId($transcodeTemplateGroupId)
  * @method string getTranscodeTemplateGroupId()
  */
-class UpdateTranscodeTemplateGroup extends VodAction
+class UpdateTranscodeTemplateGroup extends Request
 {
 
 }
@@ -2198,7 +2198,7 @@ class UpdateTranscodeTemplateGroup extends VodAction
  * @method $this setTemplateType($templateType)
  * @method string getTemplateType()
  */
-class GetDefaultAITemplate extends VodAction
+class GetDefaultAITemplate extends Request
 {
 
 }
@@ -2213,7 +2213,7 @@ class GetDefaultAITemplate extends VodAction
  * @method $this setPercent($percent)
  * @method string getPercent()
  */
-class DescribeVodDomainTopReferVisit extends VodAction
+class DescribeVodDomainTopReferVisit extends Request
 {
 
 }
@@ -2224,7 +2224,7 @@ class DescribeVodDomainTopReferVisit extends VodAction
  * @method $this setLegalSwitch($legalSwitch)
  * @method string getLegalSwitch()
  */
-class SetCheckChannel extends VodAction
+class SetCheckChannel extends Request
 {
 
 }
@@ -2235,7 +2235,7 @@ class SetCheckChannel extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class GetStorageRegionList extends VodAction
+class GetStorageRegionList extends Request
 {
 
 }
@@ -2244,7 +2244,7 @@ class GetStorageRegionList extends VodAction
  * @method $this setSecurityGroupName($securityGroupName)
  * @method string getSecurityGroupName()
  */
-class ListAuditSecurityIp extends VodAction
+class ListAuditSecurityIp extends Request
 {
 
 }
@@ -2259,7 +2259,7 @@ class ListAuditSecurityIp extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class RegisterMedia extends VodAction
+class RegisterMedia extends Request
 {
 
 }
@@ -2274,7 +2274,7 @@ class RegisterMedia extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoFaceRecogJob extends VodAction
+class SubmitAIVideoFaceRecogJob extends Request
 {
 
 }
@@ -2283,7 +2283,7 @@ class SubmitAIVideoFaceRecogJob extends VodAction
  * @method $this setOwnerAccount($ownerAccount)
  * @method string getOwnerAccount()
  */
-class GetTotalStatis extends VodAction
+class GetTotalStatis extends Request
 {
 
 }
@@ -2294,7 +2294,7 @@ class GetTotalStatis extends VodAction
  * @method $this setTemplateId($templateId)
  * @method string getTemplateId()
  */
-class SubmitAIMediaAuditJob extends VodAction
+class SubmitAIMediaAuditJob extends Request
 {
 
 }
@@ -2303,7 +2303,7 @@ class SubmitAIMediaAuditJob extends VodAction
  * @method $this setPolicyNames($policyNames)
  * @method string getPolicyNames()
  */
-class GetAppPolicies extends VodAction
+class GetAppPolicies extends Request
 {
 
 }
@@ -2316,7 +2316,7 @@ class GetAppPolicies extends VodAction
  * @method $this setStorageLocation($storageLocation)
  * @method string getStorageLocation()
  */
-class SetDefaultUploadStorage extends VodAction
+class SetDefaultUploadStorage extends Request
 {
 
 }
@@ -2331,7 +2331,7 @@ class SetDefaultUploadStorage extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIASRJob extends VodAction
+class SubmitAIASRJob extends Request
 {
 
 }
@@ -2350,7 +2350,7 @@ class SubmitAIASRJob extends VodAction
  * @method $this setLocationNameEn($locName)
  * @method string getLocationNameEn()
  */
-class DescribeVodDomainQpsData extends VodAction
+class DescribeVodDomainQpsData extends Request
 {
 
 }
@@ -2367,7 +2367,7 @@ class DescribeVodDomainQpsData extends VodAction
  * @method $this setScope($scope)
  * @method string getScope()
  */
-class AddVodDomain extends VodAction
+class AddVodDomain extends Request
 {
 
 }
@@ -2384,7 +2384,7 @@ class AddVodDomain extends VodAction
  * @method $this setAdditionType($additionType)
  * @method string getAdditionType()
  */
-class GetMezzanineInfo extends VodAction
+class GetMezzanineInfo extends Request
 {
 
 }
@@ -2393,7 +2393,7 @@ class GetMezzanineInfo extends VodAction
  * @method $this setVideoIds($mediaIdStr)
  * @method string getVideoIds()
  */
-class DeleteVideo extends VodAction
+class DeleteVideo extends Request
 {
 
 }
@@ -2408,7 +2408,7 @@ class DeleteVideo extends VodAction
  * @method $this setPolicyNames($policyNames)
  * @method string getPolicyNames()
  */
-class DetachAppPolicyFromIdentity extends VodAction
+class DetachAppPolicyFromIdentity extends Request
 {
 
 }
@@ -2421,7 +2421,7 @@ class DetachAppPolicyFromIdentity extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainPvData extends VodAction
+class DescribeVodDomainPvData extends Request
 {
 
 }
@@ -2434,7 +2434,7 @@ class DescribeVodDomainPvData extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeSrcTrafficData extends VodAction
+class DescribeVodDomainRealTimeSrcTrafficData extends Request
 {
 
 }
@@ -2447,7 +2447,7 @@ class DescribeVodDomainRealTimeSrcTrafficData extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeUserUvByDay extends VodAction
+class DescribeUserUvByDay extends Request
 {
 
 }
@@ -2456,7 +2456,7 @@ class DescribeUserUvByDay extends VodAction
  * @method $this setWorkflowId($workflowId)
  * @method string getWorkflowId()
  */
-class DeleteWorkflow extends VodAction
+class DeleteWorkflow extends Request
 {
 
 }
@@ -2471,7 +2471,7 @@ class DeleteWorkflow extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoTerrorismRecogJob extends VodAction
+class SubmitAIVideoTerrorismRecogJob extends Request
 {
 
 }
@@ -2504,7 +2504,7 @@ class SubmitAIVideoTerrorismRecogJob extends VodAction
  * @method $this setIcon($icon)
  * @method string getIcon()
  */
-class CreateUploadAttachedMedia extends VodAction
+class CreateUploadAttachedMedia extends Request
 {
 
 }
@@ -2513,7 +2513,7 @@ class CreateUploadAttachedMedia extends VodAction
  * @method $this setTemplateType($templateType)
  * @method string getTemplateType()
  */
-class ListVodTemplate extends VodAction
+class ListVodTemplate extends Request
 {
 
 }
@@ -2528,7 +2528,7 @@ class ListVodTemplate extends VodAction
  * @method $this setAuditConfig($auditConfig)
  * @method string getAuditConfig()
  */
-class SetCustomerConfig extends VodAction
+class SetCustomerConfig extends Request
 {
 
 }
@@ -2549,7 +2549,7 @@ class SetCustomerConfig extends VodAction
  * @method $this setPageNo($pageNumber)
  * @method int getPageNo()
  */
-class DescribeCdnDomainLogs extends VodAction
+class DescribeCdnDomainLogs extends Request
 {
 
 }
@@ -2564,7 +2564,7 @@ class DescribeCdnDomainLogs extends VodAction
  * @method $this setPageSize($pageSize)
  * @method int getPageSize()
  */
-class ListAppInfo extends VodAction
+class ListAppInfo extends Request
 {
 
 }
@@ -2577,7 +2577,7 @@ class ListAppInfo extends VodAction
  * @method $this setFunctions($functions)
  * @method string getFunctions()
  */
-class BatchSetVodDomainConfigs extends VodAction
+class BatchSetVodDomainConfigs extends Request
 {
 
 }
@@ -2594,7 +2594,7 @@ class BatchSetVodDomainConfigs extends VodAction
  * @method $this setStatus($status)
  * @method string getStatus()
  */
-class UpdateAppInfo extends VodAction
+class UpdateAppInfo extends Request
 {
 
 }
@@ -2605,7 +2605,7 @@ class UpdateAppInfo extends VodAction
  * @method $this setPreprocessType($preprocessType)
  * @method string getPreprocessType()
  */
-class SubmitPreprocessJobs extends VodAction
+class SubmitPreprocessJobs extends Request
 {
 
 }
@@ -2616,7 +2616,7 @@ class SubmitPreprocessJobs extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class DeleteAppInfo extends VodAction
+class DeleteAppInfo extends Request
 {
 
 }
@@ -2627,7 +2627,7 @@ class DeleteAppInfo extends VodAction
  * @method $this setConfigId($configId)
  * @method string getConfigId()
  */
-class DeleteVodSpecificConfig extends VodAction
+class DeleteVodSpecificConfig extends Request
 {
 
 }
@@ -2636,7 +2636,7 @@ class DeleteVodSpecificConfig extends VodAction
  * @method $this setMaterialId($materialId)
  * @method string getMaterialId()
  */
-class GetMaterial extends VodAction
+class GetMaterial extends Request
 {
 
 }
@@ -2657,7 +2657,7 @@ class GetMaterial extends VodAction
  * @method $this setAuthInfo($authInfo)
  * @method string getAuthInfo()
  */
-class AssumeSlsRole extends VodAction
+class AssumeSlsRole extends Request
 {
 
 }
@@ -2670,7 +2670,7 @@ class AssumeSlsRole extends VodAction
  * @method $this setDescription($Description)
  * @method string getDescription()
  */
-class CreateAppInfo extends VodAction
+class CreateAppInfo extends Request
 {
 
 }
@@ -2679,7 +2679,7 @@ class CreateAppInfo extends VodAction
  * @method $this setOwnerAccount($ownerAccount)
  * @method string getOwnerAccount()
  */
-class DescribeRefreshQuota extends VodAction
+class DescribeRefreshQuota extends Request
 {
 
 }
@@ -2688,7 +2688,7 @@ class DescribeRefreshQuota extends VodAction
  * @method $this setOwnerAccount($ownerAccount)
  * @method string getOwnerAccount()
  */
-class ListAIStatisType extends VodAction
+class ListAIStatisType extends Request
 {
 
 }
@@ -2701,7 +2701,7 @@ class ListAIStatisType extends VodAction
  * @method $this setStorageLocation($storageLocation)
  * @method string getStorageLocation()
  */
-class DeleteStorage extends VodAction
+class DeleteStorage extends Request
 {
 
 }
@@ -2720,7 +2720,7 @@ class DeleteStorage extends VodAction
  * @method $this setRegion($region)
  * @method string getRegion()
  */
-class SetVodDomainCertificate extends VodAction
+class SetVodDomainCertificate extends Request
 {
 
 }
@@ -2739,7 +2739,7 @@ class SetVodDomainCertificate extends VodAction
  * @method $this setLocationNameEn($locName)
  * @method string getLocationNameEn()
  */
-class DescribeVodDomainBpsData extends VodAction
+class DescribeVodDomainBpsData extends Request
 {
 
 }
@@ -2750,7 +2750,7 @@ class DescribeVodDomainBpsData extends VodAction
  * @method $this setAIVideoFaceRecogJobIds($jobIds)
  * @method string getAIVideoFaceRecogJobIds()
  */
-class ListAIVideoFaceRecogJob extends VodAction
+class ListAIVideoFaceRecogJob extends Request
 {
 
 }
@@ -2761,7 +2761,7 @@ class ListAIVideoFaceRecogJob extends VodAction
  * @method $this setVideoId($mediaId)
  * @method string getVideoId()
  */
-class DeleteStream extends VodAction
+class DeleteStream extends Request
 {
 
 }
@@ -2774,7 +2774,7 @@ class DeleteStream extends VodAction
  * @method $this setResourceGroupId($resourceGroupId)
  * @method string getResourceGroupId()
  */
-class DeleteVodDomain extends VodAction
+class DeleteVodDomain extends Request
 {
 
 }
@@ -2791,7 +2791,7 @@ class DeleteVodDomain extends VodAction
  * @method $this setRecentNumber($recentNumber)
  * @method int getRecentNumber()
  */
-class SubmitDNAInitializationJob extends VodAction
+class SubmitDNAInitializationJob extends Request
 {
 
 }
@@ -2800,7 +2800,7 @@ class SubmitDNAInitializationJob extends VodAction
  * @method $this setWatermarkId($watertempId)
  * @method string getWatermarkId()
  */
-class GetWatermark extends VodAction
+class GetWatermark extends Request
 {
 
 }
@@ -2819,7 +2819,7 @@ class GetWatermark extends VodAction
  * @method $this setLocationNameEn($locName)
  * @method string getLocationNameEn()
  */
-class DescribeVodDomainTrafficData extends VodAction
+class DescribeVodDomainTrafficData extends Request
 {
 
 }
@@ -2830,7 +2830,7 @@ class DescribeVodDomainTrafficData extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class GetMediaAuditResult extends VodAction
+class GetMediaAuditResult extends Request
 {
 
 }
@@ -2841,7 +2841,7 @@ class GetMediaAuditResult extends VodAction
  * @method $this setConfigs($configs)
  * @method string getConfigs()
  */
-class AddCustomTemplateAndGroupConsole extends VodAction
+class AddCustomTemplateAndGroupConsole extends Request
 {
 
 }
@@ -2868,7 +2868,7 @@ class AddCustomTemplateAndGroupConsole extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class CreateUploadImage extends VodAction
+class CreateUploadImage extends Request
 {
 
 }
@@ -2877,7 +2877,7 @@ class CreateUploadImage extends VodAction
  * @method $this setDomainName($domainName)
  * @method string getDomainName()
  */
-class StopVodDomain extends VodAction
+class StopVodDomain extends Request
 {
 
 }
@@ -2886,7 +2886,7 @@ class StopVodDomain extends VodAction
  * @method $this setDomainNames($domainNames)
  * @method string getDomainNames()
  */
-class BatchStopVodDomain extends VodAction
+class BatchStopVodDomain extends Request
 {
 
 }
@@ -2901,7 +2901,7 @@ class BatchStopVodDomain extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoSummaryJob extends VodAction
+class SubmitAIVideoSummaryJob extends Request
 {
 
 }
@@ -2916,7 +2916,7 @@ class SubmitAIVideoSummaryJob extends VodAction
  * @method $this setPercent($percent)
  * @method string getPercent()
  */
-class DescribeVodDomainTopUrlVisit extends VodAction
+class DescribeVodDomainTopUrlVisit extends Request
 {
 
 }
@@ -2929,7 +2929,7 @@ class DescribeVodDomainTopUrlVisit extends VodAction
  * @method $this setOutputType($outputType)
  * @method string getOutputType()
  */
-class GetImageInfo extends VodAction
+class GetImageInfo extends Request
 {
 
 }
@@ -2938,7 +2938,7 @@ class GetImageInfo extends VodAction
  * @method $this setVideoId($mediaId)
  * @method string getVideoId()
  */
-class RefreshUploadVideo extends VodAction
+class RefreshUploadVideo extends Request
 {
 
 }
@@ -2953,7 +2953,7 @@ class RefreshUploadVideo extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoCensorJob extends VodAction
+class SubmitAIVideoCensorJob extends Request
 {
 
 }
@@ -2966,7 +2966,7 @@ class SubmitAIVideoCensorJob extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class DeleteMessageCallback extends VodAction
+class DeleteMessageCallback extends Request
 {
 
 }
@@ -2975,7 +2975,7 @@ class DeleteMessageCallback extends VodAction
  * @method $this setWatermarkId($watertempId)
  * @method string getWatermarkId()
  */
-class DeleteWatermark extends VodAction
+class DeleteWatermark extends Request
 {
 
 }
@@ -2986,7 +2986,7 @@ class DeleteWatermark extends VodAction
  * @method $this setGroupId($groupId)
  * @method string getGroupId()
  */
-class GetTemplateGroupConsole extends VodAction
+class GetTemplateGroupConsole extends Request
 {
 
 }
@@ -2999,7 +2999,7 @@ class GetTemplateGroupConsole extends VodAction
  * @method $this setOperateMode($operateMode)
  * @method string getOperateMode()
  */
-class SetAuditSecurityIp extends VodAction
+class SetAuditSecurityIp extends Request
 {
 
 }
@@ -3032,7 +3032,7 @@ class SetAuditSecurityIp extends VodAction
  * @method $this setPlayConfig($playConfig)
  * @method string getPlayConfig()
  */
-class GetPlayInfo extends VodAction
+class GetPlayInfo extends Request
 {
 
 }
@@ -3055,7 +3055,7 @@ class GetPlayInfo extends VodAction
  * @method $this setIspNameEn($ispNameEn)
  * @method string getIspNameEn()
  */
-class DescribeDomainBpsData extends VodAction
+class DescribeDomainBpsData extends Request
 {
 
 }
@@ -3076,7 +3076,7 @@ class DescribeDomainBpsData extends VodAction
  * @method $this setDivision($division)
  * @method string getDivision()
  */
-class GetMTSStatis extends VodAction
+class GetMTSStatis extends Request
 {
 
 }
@@ -3101,7 +3101,7 @@ class GetMTSStatis extends VodAction
  * @method $this setResultTypes($resultTypes)
  * @method string getResultTypes()
  */
-class SearchMedia extends VodAction
+class SearchMedia extends Request
 {
 
 }
@@ -3118,7 +3118,7 @@ class SearchMedia extends VodAction
  * @method $this setMaxKeys($maxKeys)
  * @method string getMaxKeys()
  */
-class GetPersonalStorageList extends VodAction
+class GetPersonalStorageList extends Request
 {
 
 }
@@ -3133,7 +3133,7 @@ class GetPersonalStorageList extends VodAction
  * @method $this setLimit($limit)
  * @method int getLimit()
  */
-class DescribeVodTopDomainsByFlow extends VodAction
+class DescribeVodTopDomainsByFlow extends Request
 {
 
 }
@@ -3146,7 +3146,7 @@ class DescribeVodTopDomainsByFlow extends VodAction
  * @method $this setTranscodeTemplateGroupId($transcodeTemplateGroupId)
  * @method string getTranscodeTemplateGroupId()
  */
-class AddTranscodeTemplateGroup extends VodAction
+class AddTranscodeTemplateGroup extends Request
 {
 
 }
@@ -3163,7 +3163,7 @@ class AddTranscodeTemplateGroup extends VodAction
  * @method $this setType($type)
  * @method string getType()
  */
-class GetCategories extends VodAction
+class GetCategories extends Request
 {
 
 }
@@ -3180,7 +3180,7 @@ class GetCategories extends VodAction
  * @method $this setImageType($imageType)
  * @method string getImageType()
  */
-class DeleteImage extends VodAction
+class DeleteImage extends Request
 {
 
 }
@@ -3189,7 +3189,7 @@ class DeleteImage extends VodAction
  * @method $this setJobId($jobId)
  * @method string getJobId()
  */
-class GetAIMediaAuditJob extends VodAction
+class GetAIMediaAuditJob extends Request
 {
 
 }
@@ -3202,7 +3202,7 @@ class GetAIMediaAuditJob extends VodAction
  * @method $this setPageNo($pageNo)
  * @method int getPageNo()
  */
-class GetAuditResultDetail extends VodAction
+class GetAuditResultDetail extends Request
 {
 
 }
@@ -3215,7 +3215,7 @@ class GetAuditResultDetail extends VodAction
  * @method $this setVideoId($videoId)
  * @method string getVideoId()
  */
-class DescribePlayVideoStatis extends VodAction
+class DescribePlayVideoStatis extends Request
 {
 
 }
@@ -3226,7 +3226,7 @@ class DescribePlayVideoStatis extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribePlayUserAvg extends VodAction
+class DescribePlayUserAvg extends Request
 {
 
 }
@@ -3235,7 +3235,7 @@ class DescribePlayUserAvg extends VodAction
  * @method $this setVodTemplateId($vodTemplateId)
  * @method string getVodTemplateId()
  */
-class DeleteVodTemplate extends VodAction
+class DeleteVodTemplate extends Request
 {
 
 }
@@ -3250,7 +3250,7 @@ class DeleteVodTemplate extends VodAction
  * @method $this setPlayConfig($playConfig)
  * @method string getPlayConfig()
  */
-class GetVideoPlayAuth extends VodAction
+class GetVideoPlayAuth extends Request
 {
 
 }
@@ -3263,7 +3263,7 @@ class GetVideoPlayAuth extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class CreateMedia extends VodAction
+class CreateMedia extends Request
 {
 
 }
@@ -3272,7 +3272,7 @@ class CreateMedia extends VodAction
  * @method $this setIsContainsTemplates($containTemplates)
  * @method bool getIsContainsTemplates()
  */
-class ListTemplateGroup extends VodAction
+class ListTemplateGroup extends Request
 {
 
 }
@@ -3281,7 +3281,7 @@ class ListTemplateGroup extends VodAction
  * @method $this setMaterialId($materialId)
  * @method string getMaterialId()
  */
-class RefreshUploadMaterialToken extends VodAction
+class RefreshUploadMaterialToken extends Request
 {
 
 }
@@ -3296,7 +3296,7 @@ class RefreshUploadMaterialToken extends VodAction
  * @method $this setPrivateOssAuth($privateOssAuth)
  * @method string getPrivateOssAuth()
  */
-class SetL2OssKeyConfig extends VodAction
+class SetL2OssKeyConfig extends Request
 {
 
 }
@@ -3313,7 +3313,7 @@ class SetL2OssKeyConfig extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeQpsData extends VodAction
+class DescribeVodDomainRealTimeQpsData extends Request
 {
 
 }
@@ -3322,7 +3322,7 @@ class DescribeVodDomainRealTimeQpsData extends VodAction
  * @method $this setWatermarkId($watertempId)
  * @method string getWatermarkId()
  */
-class SetDefaultWatermarkConsole extends VodAction
+class SetDefaultWatermarkConsole extends Request
 {
 
 }
@@ -3333,7 +3333,7 @@ class SetDefaultWatermarkConsole extends VodAction
  * @method $this setTemplateIds($templateIds)
  * @method string getTemplateIds()
  */
-class DeleteCustomTemplateConsole extends VodAction
+class DeleteCustomTemplateConsole extends Request
 {
 
 }
@@ -3356,7 +3356,7 @@ class DeleteCustomTemplateConsole extends VodAction
  * @method $this setIspNameEn($ispNameEn)
  * @method string getIspNameEn()
  */
-class DescribeDomainFlowData extends VodAction
+class DescribeDomainFlowData extends Request
 {
 
 }
@@ -3365,7 +3365,7 @@ class DescribeDomainFlowData extends VodAction
  * @method $this setDomainName($domainName)
  * @method string getDomainName()
  */
-class DescribeVodCertificateList extends VodAction
+class DescribeVodCertificateList extends Request
 {
 
 }
@@ -3374,7 +3374,7 @@ class DescribeVodCertificateList extends VodAction
  * @method $this setCertName($certName)
  * @method string getCertName()
  */
-class DescribeVodCertificateDetail extends VodAction
+class DescribeVodCertificateDetail extends Request
 {
 
 }
@@ -3399,7 +3399,7 @@ class DescribeVodCertificateDetail extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class ListLiveRecordVideo extends VodAction
+class ListLiveRecordVideo extends Request
 {
 
 }
@@ -3408,7 +3408,7 @@ class ListLiveRecordVideo extends VodAction
  * @method $this setPolicyNames($policyNames)
  * @method string getPolicyNames()
  */
-class DeleteAppPolicy extends VodAction
+class DeleteAppPolicy extends Request
 {
 
 }
@@ -3423,7 +3423,7 @@ class DeleteAppPolicy extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoTagJob extends VodAction
+class SubmitAIVideoTagJob extends Request
 {
 
 }
@@ -3432,7 +3432,7 @@ class SubmitAIVideoTagJob extends VodAction
  * @method $this setTemplateId($templateId)
  * @method string getTemplateId()
  */
-class GetAITemplate extends VodAction
+class GetAITemplate extends Request
 {
 
 }
@@ -3443,7 +3443,7 @@ class GetAITemplate extends VodAction
  * @method $this setAIVideoSummaryJobIds($jobIds)
  * @method string getAIVideoSummaryJobIds()
  */
-class ListAIVideoSummaryJob extends VodAction
+class ListAIVideoSummaryJob extends Request
 {
 
 }
@@ -3456,7 +3456,7 @@ class ListAIVideoSummaryJob extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeUserAvgTimeByDay extends VodAction
+class DescribeUserAvgTimeByDay extends Request
 {
 
 }
@@ -3475,7 +3475,7 @@ class DescribeUserAvgTimeByDay extends VodAction
  * @method $this setTaskName($name)
  * @method string getTaskName()
  */
-class CreateVodUserUsageDetailDataExportTask extends VodAction
+class CreateVodUserUsageDetailDataExportTask extends Request
 {
 
 }
@@ -3498,7 +3498,7 @@ class CreateVodUserUsageDetailDataExportTask extends VodAction
  * @method $this setDivision($division)
  * @method string getDivision()
  */
-class GetAIStatis extends VodAction
+class GetAIStatis extends Request
 {
 
 }
@@ -3509,7 +3509,7 @@ class GetAIStatis extends VodAction
  * @method $this setPageNumber($pageIndex)
  * @method string getPageNumber()
  */
-class DescribeVodUserUsageDetailDataExportTask extends VodAction
+class DescribeVodUserUsageDetailDataExportTask extends Request
 {
 
 }
@@ -3522,7 +3522,7 @@ class DescribeVodUserUsageDetailDataExportTask extends VodAction
  * @method $this setActionList($actionList)
  * @method string getActionList()
  */
-class UpdateWorkflow extends VodAction
+class UpdateWorkflow extends Request
 {
 
 }
@@ -3535,7 +3535,7 @@ class UpdateWorkflow extends VodAction
  * @method $this setTemplateConfig($templateConfig)
  * @method string getTemplateConfig()
  */
-class UpdateAITemplate extends VodAction
+class UpdateAITemplate extends Request
 {
 
 }
@@ -3558,7 +3558,7 @@ class UpdateAITemplate extends VodAction
  * @method $this setSnapshotTemplateId($snapshotTemplateId)
  * @method string getSnapshotTemplateId()
  */
-class SubmitSnapshotJob extends VodAction
+class SubmitSnapshotJob extends Request
 {
 
 }
@@ -3587,7 +3587,7 @@ class SubmitSnapshotJob extends VodAction
  * @method $this setUploadAddress($uploadAddress)
  * @method string getUploadAddress()
  */
-class GetUploadProgress extends VodAction
+class GetUploadProgress extends Request
 {
 
 }
@@ -3600,7 +3600,7 @@ class GetUploadProgress extends VodAction
  * @method $this setRegion($region)
  * @method string getRegion()
  */
-class DescribeVodTranscodeData extends VodAction
+class DescribeVodTranscodeData extends Request
 {
 
 }
@@ -3613,7 +3613,7 @@ class DescribeVodTranscodeData extends VodAction
  * @method $this setTemplateConfig($templateConfig)
  * @method string getTemplateConfig()
  */
-class UpdateVodTemplate extends VodAction
+class UpdateVodTemplate extends Request
 {
 
 }
@@ -3636,7 +3636,7 @@ class UpdateVodTemplate extends VodAction
  * @method $this setTitle($title)
  * @method string getTitle()
  */
-class SearchEditingProject extends VodAction
+class SearchEditingProject extends Request
 {
 
 }
@@ -3645,7 +3645,7 @@ class SearchEditingProject extends VodAction
  * @method $this setGroupId($groupId)
  * @method string getGroupId()
  */
-class DeleteTemplateGroupConsole extends VodAction
+class DeleteTemplateGroupConsole extends Request
 {
 
 }
@@ -3656,7 +3656,7 @@ class DeleteTemplateGroupConsole extends VodAction
  * @method $this setAIVideoCategoryJobIds($jobIds)
  * @method string getAIVideoCategoryJobIds()
  */
-class ListAIVideoCategoryJob extends VodAction
+class ListAIVideoCategoryJob extends Request
 {
 
 }
@@ -3671,7 +3671,7 @@ class ListAIVideoCategoryJob extends VodAction
  * @method $this setMaterialType($materialType)
  * @method string getMaterialType()
  */
-class DeleteEditingProjectMaterials extends VodAction
+class DeleteEditingProjectMaterials extends Request
 {
 
 }
@@ -3682,7 +3682,7 @@ class DeleteEditingProjectMaterials extends VodAction
  * @method $this setActionList($actionList)
  * @method string getActionList()
  */
-class AddWorkflow extends VodAction
+class AddWorkflow extends Request
 {
 
 }
@@ -3691,7 +3691,7 @@ class AddWorkflow extends VodAction
  * @method $this setTranscodeTemplateGroupId($transcodeTemplateGroupId)
  * @method string getTranscodeTemplateGroupId()
  */
-class GetTranscodeTemplateGroup extends VodAction
+class GetTranscodeTemplateGroup extends Request
 {
 
 }
@@ -3728,7 +3728,7 @@ class GetTranscodeTemplateGroup extends VodAction
  * @method $this setAppId($appId)
  * @method string getAppId()
  */
-class CreateUploadVideo extends VodAction
+class CreateUploadVideo extends Request
 {
 
 }
@@ -3737,7 +3737,7 @@ class CreateUploadVideo extends VodAction
  * @method $this setResourceRealOwnerId($resourceRealOwnerId)
  * @method int getResourceRealOwnerId()
  */
-class GetWatermarksConsole extends VodAction
+class GetWatermarksConsole extends Request
 {
 
 }
@@ -3748,7 +3748,7 @@ class GetWatermarksConsole extends VodAction
  * @method $this setCookie($cookie)
  * @method string getCookie()
  */
-class AssumeExperienceRole extends VodAction
+class AssumeExperienceRole extends Request
 {
 
 }
@@ -3769,7 +3769,7 @@ class AssumeExperienceRole extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class UploadMediaByURL extends VodAction
+class UploadMediaByURL extends Request
 {
 
 }
@@ -3788,7 +3788,7 @@ class UploadMediaByURL extends VodAction
  * @method $this setVideoId($mediaId)
  * @method string getVideoId()
  */
-class GetVideoPlayInfo extends VodAction
+class GetVideoPlayInfo extends Request
 {
 
 }
@@ -3801,7 +3801,7 @@ class GetVideoPlayInfo extends VodAction
  * @method $this setDomainName($domainName)
  * @method string getDomainName()
  */
-class SetDefaultPlayDomain extends VodAction
+class SetDefaultPlayDomain extends Request
 {
 
 }
@@ -3816,7 +3816,7 @@ class SetDefaultPlayDomain extends VodAction
  * @method $this setUserData($userData)
  * @method string getUserData()
  */
-class SubmitAIVideoCategoryJob extends VodAction
+class SubmitAIVideoCategoryJob extends Request
 {
 
 }
@@ -3833,7 +3833,7 @@ class SubmitAIVideoCategoryJob extends VodAction
  * @method $this setEndTime($endTime)
  * @method string getEndTime()
  */
-class DescribeVodDomainRealTimeBpsData extends VodAction
+class DescribeVodDomainRealTimeBpsData extends Request
 {
 
 }
@@ -3844,7 +3844,7 @@ class DescribeVodDomainRealTimeBpsData extends VodAction
  * @method $this setMediaId($mediaId)
  * @method string getMediaId()
  */
-class GetVideoDNAResult extends VodAction
+class GetVideoDNAResult extends Request
 {
 
 }
@@ -3869,7 +3869,7 @@ class GetVideoDNAResult extends VodAction
  * @method $this setCustomMediaInfo($customMediaInfo)
  * @method string getCustomMediaInfo()
  */
-class UpdateVideoInfo extends VodAction
+class UpdateVideoInfo extends Request
 {
 
 }
@@ -3880,7 +3880,7 @@ class UpdateVideoInfo extends VodAction
  * @method $this setGroupSymbol($groupSymbol)
  * @method string getGroupSymbol()
  */
-class SetDefaultTemplateGroupConsole extends VodAction
+class SetDefaultTemplateGroupConsole extends Request
 {
 
 }
@@ -3891,7 +3891,7 @@ class SetDefaultTemplateGroupConsole extends VodAction
  * @method $this setPageNo($pageNo)
  * @method int getPageNo()
  */
-class GetMediaAuditResultDetail extends VodAction
+class GetMediaAuditResultDetail extends Request
 {
 
 }
@@ -3902,7 +3902,7 @@ class GetMediaAuditResultDetail extends VodAction
  * @method $this setBizdate($bizdate)
  * @method string getBizdate()
  */
-class DescribeUserVvTopByDay extends VodAction
+class DescribeUserVvTopByDay extends Request
 {
 
 }
@@ -3913,7 +3913,7 @@ class DescribeUserVvTopByDay extends VodAction
  * @method $this setTypes($types)
  * @method string getTypes()
  */
-class GetAIService extends VodAction
+class GetAIService extends Request
 {
 
 }
@@ -3926,7 +3926,7 @@ class GetAIService extends VodAction
  * @method $this setRegion($region)
  * @method string getRegion()
  */
-class DescribeVodAIData extends VodAction
+class DescribeVodAIData extends Request
 {
 
 }
@@ -3941,7 +3941,7 @@ class DescribeVodAIData extends VodAction
  * @method $this setFileUrl($fileUrl)
  * @method string getFileUrl()
  */
-class AddWatermark extends VodAction
+class AddWatermark extends Request
 {
 
 }
