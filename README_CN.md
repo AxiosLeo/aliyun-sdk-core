@@ -1,40 +1,40 @@
-English | [简体中文](./README_CN.md)
+[English](./REAME.md) | 简体中文
 
-> Aliyun Cloud Service SDK Core, Support for composer library.
+> 阿里云服务 SDK ，支持 composer 扩展
 
 [![Latest Stable Version](https://poser.pugx.org/axios/aliyun-sdk/v/stable)](https://packagist.org/packages/axios/aliyun-sdk)
 [![License](https://poser.pugx.org/axios/aliyun-sdk/license)](https://packagist.org/packages/axios/aliyun-sdk)
 
-> [Aliyun Cloud official documentation center](https://help.aliyun.com/)
+> [阿里云官方文档中心](https://help.aliyun.com/)
 
-> QQ Group：521797692
+> QQ 群：521797692
 
 ---
 
-## Env
+## 运行环境
 - PHP 7.1+.
 - CURL extension.
 
 ---
 
-## Install
+## 安装
 ```shell
 composer require axios/aliyun-sdk-core
 ```
 
 ---
 
-## How To Use
+## 使用
 
   > [aliyun-sdk/example](https://github.com/AxiosCros/aliyun-sdk/tree/master/example)
 
-* require composer autoload
+* 引用 composer 自动加载文件
 
 ```php
 require_once __DIR__. "/../vendor/autoload.php";
 ```
 
-* auth
+* 设置授权信息
 
 ```php
 $access_id = "testAccessKeyId";
@@ -43,13 +43,13 @@ $access_secret = "testAccessKeySecret";
 \aliyun\sdk\Aliyun::auth($access_id,$access_secret);
 ```
 
-* Setting Region
+* 设置区域
 
 ```php
 \aliyun\sdk\Aliyun::region('cn-shanghai');
 ```
 
-* Request
+* 请求
 
 ```php
 
@@ -58,7 +58,7 @@ $response = Vod::V20170321()->GetCategories()
     ->request();
 ```
 
-* Get Response Content
+* 查看回调结果
 
 ```php
 dump($response->getContent());
@@ -66,7 +66,7 @@ dump($response->getContent());
 
 ---
 
-## Customized Request
+## 自定义请求
 
 
 ```php
@@ -132,7 +132,7 @@ $result   = $response->getContent();
 
 ```
 
-> [Request Option](http://docs.guzzlephp.org/en/stable/request-options.html)
+> [请求选项](https://guzzle-cn.readthedocs.io/zh_CN/latest/request-options.html)
 
 
 ## License
