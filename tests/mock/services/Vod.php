@@ -1,6 +1,6 @@
 <?php
 
-namespace aliyun\sdk\tests\mock\vod;
+namespace aliyun\sdk\tests\mock\services;
 
 use aliyun\sdk\core\lib\ProductAbstract;
 use aliyun\sdk\core\traits\ProductTrait;
