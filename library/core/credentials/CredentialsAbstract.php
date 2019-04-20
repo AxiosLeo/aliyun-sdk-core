@@ -47,15 +47,8 @@ abstract class CredentialsAbstract implements CredentialsInterface
     private function getInternalEndpoint()
     {
         $endpoint = "";
-        if (isset($this->endpoints["internal"][$this->region_id])) {
+        if (!empty($this->endpoints["internal"][$this->region_id])) {
             $endpoint = $this->endpoints["internal"][$this->region_id];
-        }
-
-        if (false !== strpos($endpoint, "[")) {
-            $pos      = strpos($endpoint, "[");
-            $pos_end  = strpos($endpoint, "]");
-            $replace  = substr($endpoint, $pos, $pos_end - $pos + 1);
-            $endpoint = str_replace($replace, $this->region_id, $endpoint);
         }
 
         return $endpoint;
