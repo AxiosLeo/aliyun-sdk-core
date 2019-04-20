@@ -24,18 +24,17 @@ class UnsupportedRegionIdException extends \RuntimeException
         } else {
             $message = "Unsupported RegionId:" . $region_id . " ; ";
         }
-        $message  .= " (" . $product . ") List of Supported RegionId : " . $this->getSupportedRegionIdList($endpoints) . ".\n";
+        $endpoints_list = "";
+        if (isset($endpoints["regions"])) {
+            $endpoints_list = implode(",", $endpoints["regions"]);
+        }
+        if (empty($endpoints_list)) {
+            $message .= " (" . $product . ") List of Supported RegionId : " . $endpoints_list . ".\n";
+        } else {
+            $message .= " (" . $product . ") List of Supported RegionId : " . $endpoints_list . ".\n";
+        }
         $code     = 400;
         $previous = null;
         parent::__construct($message, $code, $previous);
-    }
-
-    private function getSupportedRegionIdList($endpoints, $glue = ",")
-    {
-        $list = [];
-        foreach ($endpoints as $region_id => $endpoint) {
-            array_push($list, $region_id);
-        }
-        return implode($glue, $list);
     }
 }
