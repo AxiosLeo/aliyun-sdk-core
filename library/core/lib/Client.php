@@ -17,20 +17,20 @@ class Client implements ClientInterface
     protected $product;
 
     /**
-     * @var Action[]
+     * @var Request[]
      */
     protected $instance;
 
     public function __call($action, $arguments)
     {
         if (is_null($this->instance)) {
-            $this->instance[$action] = new Action(
-                $this->product->productId(),
-                $this->product->endpoints(),
-                $this->product->versionDate(),
-                $action,
-                $this->product->serviceCode()
-            );
+            $this->instance[$action] = new Request();
+            $this->instance[$action]->product($this->product->productId());
+            $this->instance[$action]->version($this->product->versionDate());
+            $this->instance[$action]->action($action);
+            $this->instance[$action]->endpoints($this->product->endpoints());
+            $this->instance[$action]->credential($this->product->credential());
+            $this->instance[$action]->serviceCode($this->product->serviceCode());
         }
         return $this->instance[$action];
     }
