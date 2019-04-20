@@ -19,6 +19,8 @@ class ProductAbstract implements ProductInterface
 
     protected $credential;
 
+    protected $service_code;
+
     public function productId()
     {
         return $this->product;
@@ -37,5 +39,10 @@ class ProductAbstract implements ProductInterface
     public function credential()
     {
         return $this->credential;
+    }
+
+    public function serviceCode()
+    {
+        return empty($this->service_code) ? null : $this->service_code;
     }
 }

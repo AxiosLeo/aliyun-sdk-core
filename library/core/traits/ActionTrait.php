@@ -13,11 +13,12 @@ trait ActionTrait
 {
     use RequestTrait;
 
-    public function __construct($product, $endpoints, $version, $action)
+    public function __construct($product, $endpoints, $version, $action, $service_code = null)
     {
-        $this->product   = $product;
-        $this->endpoints = $endpoints;
-        $this->version   = $version;
-        $this->action    = $action;
+        $this->product      = $product;
+        $this->endpoints    = $endpoints;
+        $this->version      = $version;
+        $this->action       = $action;
+        $this->service_code = $service_code;
     }
 }

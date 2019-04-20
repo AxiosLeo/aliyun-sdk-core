@@ -18,4 +18,6 @@ interface ProductInterface
     public function endpoints();
 
     public function credential();
+
+    public function serviceCode();
 }

@@ -28,7 +28,8 @@ class Client implements ClientInterface
                 $this->product->productId(),
                 $this->product->endpoints(),
                 $this->product->versionDate(),
-                $action
+                $action,
+                $this->product->serviceCode()
             );
         }
         return $this->instance[$action];
