@@ -85,7 +85,7 @@ abstract class CredentialsAbstract implements CredentialsInterface
             }
         }
 
-        throw new UnsupportedRegionIdException($this->region_id, $this->product, $this->endpoints);
+        throw new UnsupportedRegionIdException($this->product, $this->region_id, $this->endpoints);
     }
 
     private function describeEndpoints()
