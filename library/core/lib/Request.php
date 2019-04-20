@@ -10,9 +10,7 @@
 namespace aliyun\sdk\core\lib;
 
 use aliyun\sdk\Aliyun;
-use aliyun\sdk\core\credentials\AccessKeyCredential;
 use aliyun\sdk\core\credentials\CredentialsInterface;
-use aliyun\sdk\core\traits\ActionTrait;
 use api\tool\Http;
 use api\tool\lib\HttpResponse;
 
@@ -20,20 +18,10 @@ use api\tool\lib\HttpResponse;
  * Class Request
  *
  * @package aliyun\sdk\core\lib
- * @method string product($product = null)
- * @method string action($action = null)
- * @method string region($region = null)
- * @method string version($version = null)
- * @method string method($method = null)
- * @method string path($path = null)
- * @method string domain($domain = null)
- * @method array  endpoints()
  */
 class Request
 {
-    use ActionTrait;
-
-    public $service_code;
+    protected $service_code;
 
     protected $product = "";
 
@@ -49,9 +37,7 @@ class Request
 
     private $options = [];
 
-    private $path = "/";
-
-    private $format = "JSON";
+    private $curl_path = "/";
 
     private $method = "POST";
 
@@ -60,9 +46,88 @@ class Request
     protected $endpoints = [];
 
     /**
-     * @var string credential name
+     * @var CredentialsInterface credential name
      */
     protected $credential;
+
+    public function __construct()
+    {
+        $this->region = Aliyun::region();
+    }
+
+    public function product($product = null)
+    {
+        return $this->property("product", $product);
+    }
+
+    public function serviceCode($service_code = null)
+    {
+        if (!is_null($service_code)) {
+            $this->service_code = $service_code;
+        }
+        return $this->service_code;
+    }
+
+    public function version($version = null)
+    {
+        return $this->property("version", $version);
+    }
+
+    public function region($region = null)
+    {
+        return $this->property("region", $region);
+    }
+
+    public function action($action_name = null)
+    {
+        return $this->property("action", $action_name);
+    }
+
+    public function domain($domain = null)
+    {
+        return $this->property("domain", $domain);
+    }
+
+    public function curlPath($curl_path = null)
+    {
+        return $this->property("curl_path", $curl_path);
+    }
+
+    public function endpoints($endpoints = null)
+    {
+        return $this->property("endpoints", $endpoints);
+    }
+
+    public function method($method = null)
+    {
+        if (is_null($method)) {
+            return $this->method;
+        }
+        $this->method = strtoupper($method);
+        return $this->method;
+    }
+
+    /**
+     * @param CredentialsInterface|string $credentials
+     *
+     * @return CredentialsInterface
+     */
+    public function credential($credentials = null)
+    {
+        if (is_null($credentials)) {
+            $credentials = $this->credential;
+        }
+        if (is_string($credentials)) {
+            if (false !== strpos($credentials, "\\")) {
+                $credentials = new $credentials();
+            } else {
+                $class       = "\\aliyun\\sdk\\core\\credentials\\" . $credentials;
+                $credentials = new $class();
+            }
+            $this->credential = $credentials;
+        }
+        return $this->credential;
+    }
 
     public function params($key = null, $value = null)
     {
@@ -94,14 +159,6 @@ class Request
         return $this;
     }
 
-    public function format($format = null)
-    {
-        if (!is_null($format)) {
-            $this->format = strtoupper($format);
-        }
-        return $this->format;
-    }
-
     /**
      * @param CredentialsInterface|null $credentials
      *
@@ -110,27 +167,18 @@ class Request
      */
     public function request(CredentialsInterface $credentials = null)
     {
-        if (is_null($credentials)) {
-            if (is_null($this->credential)) {
-                $credentials = new AccessKeyCredential();
-            } else if (is_string($this->credential)) {
-                $class       = "\\aliyun\\sdk\\core\\credentials\\" . $this->credential;
-                $credentials = new $class();
-            }
-        }
+        $credentials = $this->credential($credentials);
 
-        if (empty($this->region)) {
-            $this->region = Aliyun::region();
+        if ($this->credential instanceof CredentialsInterface) {
+            $credentials->init($this);
         }
-
-        $credentials->init($this);
 
         $response = Http::instance()->setMethod($this->method)
             ->setOption($this->options)
             ->setDomain($this->domain)
             ->setHeader($this->headers)
             ->setParam($this->params)
-            ->curl($this->path);
+            ->curl($this->curl_path);
 
         return Aliyun::response($response);
     }
@@ -141,5 +189,16 @@ class Request
             $this->$property = $value;
         }
         return $this->$property;
+    }
+
+    public function __call($name, $arguments)
+    {
+        if (false !== strpos($name, "get")) {
+            $name = str_replace("get", "", $name);
+            return $this->params($name);
+        }
+        $name = str_replace("set", "", $name);
+        $this->params($name, $arguments[0]);
+        return $this;
     }
 }
