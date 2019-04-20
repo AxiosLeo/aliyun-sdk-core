@@ -10,5 +10,5 @@ namespace aliyun\sdk\core\lib;
 
 interface ClientInterface
 {
-    public function initAction($action_name);
+    public function init(ProductInterface $product);
 }
