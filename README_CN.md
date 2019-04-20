@@ -24,49 +24,7 @@ composer require axios/aliyun-sdk-core
 
 ---
 
-## 使用
-
-  > [aliyun-sdk/example](https://github.com/AxiosCros/aliyun-sdk/tree/master/example)
-
-* 引用 composer 自动加载文件
-
-```php
-require_once __DIR__. "/../vendor/autoload.php";
-```
-
-* 设置授权信息
-
-```php
-$access_id = "testAccessKeyId";
-$access_secret = "testAccessKeySecret";
-
-\aliyun\sdk\Aliyun::auth($access_id,$access_secret);
-```
-
-* 设置区域
-
-```php
-\aliyun\sdk\Aliyun::region('cn-shanghai');
-```
-
-* 请求
-
-```php
-
-$response = Vod::V20170321()->GetCategories()
-    ->setCateId(-1)
-    ->request();
-```
-
-* 查看回调结果
-
-```php
-dump($response->getContent());
-```
-
----
-
-## 自定义请求
+## 构造请求
 
 
 ```php
@@ -115,22 +73,53 @@ class Example
 
 ```
 
-``` php
-Aliyun::auth($access_id,$access_secret);
-Aliyun::region('cn-hangzhou');
+## 使用
 
+  > [aliyun-sdk/example](https://github.com/AxiosCros/aliyun-sdk/tree/master/example)
+
+* 引用 composer 自动加载文件
+
+```php
+require_once __DIR__. "/../vendor/autoload.php";
+```
+
+* 设置授权信息
+
+```php
+$access_id = "testAccessKeyId";
+$access_secret = "testAccessKeySecret";
+
+\aliyun\sdk\Aliyun::auth($access_id, $access_secret);
+```
+
+* 设置区域
+
+```php
+\aliyun\sdk\Aliyun::region('cn-hangzhou');
+```
+
+* 请求
+
+```php
 $request = Example::client();
 
 $request->method("POST");
 
 $response = $request->params("key", "value")
     ->headers("header_name", "header_content")
-    ->options("guzzle_option_name", "option_value")
+    ->options("option_name", "option_value")
     ->request();
-
-$result   = $response->getContent();
-
 ```
+
+* 查看回调结果
+
+```php
+$result = $response->getContent();
+```
+
+---
+
+
 
 > [请求选项](https://guzzle-cn.readthedocs.io/zh_CN/latest/request-options.html)
 

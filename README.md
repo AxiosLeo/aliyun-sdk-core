@@ -24,48 +24,6 @@ composer require axios/aliyun-sdk-core
 
 ---
 
-## How To Use
-
-  > [aliyun-sdk/example](https://github.com/AxiosCros/aliyun-sdk/tree/master/example)
-
-* require composer autoload
-
-```php
-require_once __DIR__. "/../vendor/autoload.php";
-```
-
-* auth
-
-```php
-$access_id = "testAccessKeyId";
-$access_secret = "testAccessKeySecret";
-
-\aliyun\sdk\Aliyun::auth($access_id,$access_secret);
-```
-
-* Setting Region
-
-```php
-\aliyun\sdk\Aliyun::region('cn-shanghai');
-```
-
-* Request
-
-```php
-
-$response = Vod::V20170321()->GetCategories()
-    ->setCateId(-1)
-    ->request();
-```
-
-* Get Response Content
-
-```php
-dump($response->getContent());
-```
-
----
-
 ## Customized Request
 
 
@@ -115,21 +73,49 @@ class Example
 
 ```
 
-``` php
-Aliyun::auth($access_id,$access_secret);
-Aliyun::region('cn-hangzhou');
+---
 
+## How to use
+  > [aliyun-sdk/example](https://github.com/AxiosCros/aliyun-sdk/tree/master/example)
+
+* require composer autoload
+
+```php
+require_once __DIR__. "/../vendor/autoload.php";
+```
+
+* Auth
+
+```php
+$access_id = "testAccessKeyId";
+$access_secret = "testAccessKeySecret";
+
+\aliyun\sdk\Aliyun::auth($access_id, $access_secret);
+```
+
+* Setting Region
+
+```php
+\aliyun\sdk\Aliyun::region('cn-hangzhou');
+```
+
+* request
+
+```php
 $request = Example::client();
 
 $request->method("POST");
 
 $response = $request->params("key", "value")
     ->headers("header_name", "header_content")
-    ->options("guzzle_option_name", "option_value")
+    ->options("option_name", "option_value")
     ->request();
+```
 
-$result   = $response->getContent();
+* Get Response Content
 
+```php
+$result = $response->getContent();
 ```
 
 > [Request Option](http://docs.guzzlephp.org/en/stable/request-options.html)
