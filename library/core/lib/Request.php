@@ -33,6 +33,8 @@ class Request
 {
     use ActionTrait;
 
+    public $service_code;
+
     protected $product = "";
 
     protected $action = "";
@@ -56,6 +58,11 @@ class Request
     protected $domain = "";
 
     protected $endpoints = [];
+
+    /**
+     * @var string credential name
+     */
+    protected $credential;
 
     public function params($key = null, $value = null)
     {
@@ -104,7 +111,12 @@ class Request
     public function request(CredentialsInterface $credentials = null)
     {
         if (is_null($credentials)) {
-            $credentials = new AccessKeyCredential();
+            if (is_null($this->credential)) {
+                $credentials = new AccessKeyCredential();
+            } else if (is_string($this->credential)) {
+                $class       = "\\aliyun\\sdk\\core\\credentials\\" . $this->credential;
+                $credentials = new $class();
+            }
         }
 
         if (empty($this->region)) {
