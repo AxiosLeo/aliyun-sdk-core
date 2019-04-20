@@ -22,7 +22,7 @@ class AccessKeyCredential extends CredentialsAbstract
         $request->domain($domain);
 
         $request->params("Action", $request->action());
-        $request->params('Format', strtoupper($request->format()));
+        $request->params('Format', "JSON");
         $request->params('Version', $request->version());
         $request->params('AccessKeyId', Aliyun::getAccessKeyId());
         $request->params('SignatureMethod', "HMAC-SHA1");
