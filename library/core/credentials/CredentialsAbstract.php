@@ -32,15 +32,14 @@ abstract class CredentialsAbstract implements CredentialsInterface
         $this->service_code = $request->serviceCode();
         $this->region_id    = $request->region();
 
-        if (empty($request->domain())) {
-            if (!empty($this->endpoints)) {
-                $endpoint = Aliyun::$internal ? $this->getInternalEndpoint() : $this->getPublicEndpoint();
-                if (empty($endpoint)) {
-                    return $this->notFound();
-                }
-                return $endpoint;
+        if (!empty($this->endpoints)) {
+            $endpoint = Aliyun::$internal ? $this->getInternalEndpoint() : $this->getPublicEndpoint();
+            if (empty($endpoint)) {
+                return $this->notFound();
             }
+            return $endpoint;
         }
+
         return $this->notFound();
     }
 

@@ -23,16 +23,14 @@ class Client implements ClientInterface
 
     public function __call($action, $arguments)
     {
-        if (!isset($this->instance[$action])) {
-            $this->instance[$action] = new Request();
-            $this->instance[$action]->product($this->product->productId());
-            $this->instance[$action]->version($this->product->versionDate());
-            $this->instance[$action]->action($action);
-            $this->instance[$action]->endpoints($this->product->endpoints());
-            $this->instance[$action]->credential($this->product->credential());
-            $this->instance[$action]->serviceCode($this->product->serviceCode());
-        }
-        return $this->instance[$action];
+        $request = new Request();
+        $request->product($this->product->productId());
+        $request->version($this->product->versionDate());
+        $request->action($action);
+        $request->endpoints($this->product->endpoints());
+        $request->credential($this->product->credential());
+        $request->serviceCode($this->product->serviceCode());
+        return $request;
     }
 
     public function init(ProductInterface $product)
