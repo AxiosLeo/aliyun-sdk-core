@@ -11,6 +11,7 @@ namespace aliyun\sdk\core\lib;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\credentials\CredentialsInterface;
+use aliyun\sdk\core\exception\InvalidParameterException;
 use api\tool\Http;
 use api\tool\lib\HttpResponse;
 
@@ -168,10 +169,10 @@ class Request
     public function request(CredentialsInterface $credentials = null)
     {
         $credentials = $this->credential($credentials);
-
-        if ($this->credential instanceof CredentialsInterface) {
-            $credentials->init($this);
+        if (!$credentials instanceof CredentialsInterface) {
+            throw new InvalidParameterException("$credentials must be 'CredentialsInterface'");
         }
+        $credentials->init($this);
 
         $response = Http::instance()->setMethod($this->method)
             ->setOption($this->options)
