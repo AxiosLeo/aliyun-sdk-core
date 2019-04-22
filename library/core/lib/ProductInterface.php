@@ -20,4 +20,6 @@ interface ProductInterface
     public function credential();
 
     public function serviceCode();
+
+    public function protocol();
 }

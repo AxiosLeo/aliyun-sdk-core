@@ -46,6 +46,8 @@ class Request
 
     protected $endpoints = [];
 
+    protected $protocol = "http";
+
     /**
      * @var CredentialsInterface credential name
      */
@@ -106,6 +108,14 @@ class Request
         }
         $this->method = strtoupper($method);
         return $this->method;
+    }
+
+    public function protocol($protocol = null)
+    {
+        if (!is_null($protocol)) {
+            $this->protocol = $protocol;
+        }
+        return $this->protocol;
     }
 
     /**
@@ -176,7 +186,7 @@ class Request
 
         $response = Http::instance()->setMethod($this->method)
             ->setOption($this->options)
-            ->setDomain($this->domain)
+            ->setDomain($this->protocol . "://" . $this->domain)
             ->setHeader($this->headers)
             ->setParam($this->params)
             ->curl($this->curl_path);

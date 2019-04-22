@@ -21,6 +21,8 @@ class ProductAbstract implements ProductInterface
 
     protected $service_code;
 
+    protected $protocol;
+
     public function productId()
     {
         return $this->product;
@@ -44,5 +46,13 @@ class ProductAbstract implements ProductInterface
     public function serviceCode()
     {
         return empty($this->service_code) ? null : $this->service_code;
+    }
+
+    public function protocol()
+    {
+        if (empty($this->protocol)) {
+            $this->protocol = "http";
+        }
+        return $this->protocol;
     }
 }

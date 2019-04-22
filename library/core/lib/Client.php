@@ -24,12 +24,15 @@ class Client implements ClientInterface
     public function __call($action, $arguments)
     {
         $request = new Request();
+
         $request->product($this->product->productId());
         $request->version($this->product->versionDate());
         $request->action($action);
         $request->endpoints($this->product->endpoints());
         $request->credential($this->product->credential());
         $request->serviceCode($this->product->serviceCode());
+        $request->protocol($this->product->protocol());
+
         return $request;
     }
 

@@ -25,7 +25,7 @@ abstract class CredentialsAbstract implements CredentialsInterface
 
     private $region_id;
 
-    public function setDomain(Request &$request)
+    protected function setDomain(Request &$request)
     {
         $this->endpoints    = $request->endpoints();
         $this->product      = $request->product();
