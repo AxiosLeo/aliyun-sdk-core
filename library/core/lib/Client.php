@@ -23,7 +23,7 @@ class Client implements ClientInterface
 
     public function __call($action, $arguments)
     {
-        if (is_null($this->instance)) {
+        if (!isset($this->instance[$action])) {
             $this->instance[$action] = new Request();
             $this->instance[$action]->product($this->product->productId());
             $this->instance[$action]->version($this->product->versionDate());
