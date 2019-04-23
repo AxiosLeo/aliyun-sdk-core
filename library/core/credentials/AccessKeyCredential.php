@@ -18,8 +18,9 @@ class AccessKeyCredential extends CredentialsAbstract
 {
     public function init(Request &$request): void
     {
-        $domain = $this->setDomain($request);
-        $request->domain($domain);
+        if (empty($request->domain())) {
+            $request->domain($this->setDomain($request));
+        }
 
         $request->params("Action", $request->action());
         $request->params('Format', "JSON");
