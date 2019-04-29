@@ -9,11 +9,11 @@
 
 namespace aliyun\sdk\core\credentials;
 
-use aliyun\sdk\core\lib\Request;
+use aliyun\sdk\core\lib\RpcRequest;
 
 class OssCredential extends CredentialsAbstract
 {
-    public function init(Request &$request): void
+    public function init(RpcRequest &$request): void
     {
         if (empty($request->domain())) {
             $request->domain($this->setDomain($request));

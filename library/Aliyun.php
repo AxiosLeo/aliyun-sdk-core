@@ -44,8 +44,8 @@ class Aliyun
     {
         if (!is_null($region_id)) {
             self::$region_id = $region_id;
+            self::$internal  = $internal;
         }
-        self::$internal = $internal;
         return self::$region_id;
     }
 

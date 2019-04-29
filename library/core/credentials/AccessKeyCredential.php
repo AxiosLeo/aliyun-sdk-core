@@ -11,12 +11,12 @@ namespace aliyun\sdk\core\credentials;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\help\SignatureNonce;
-use aliyun\sdk\core\lib\Request;
+use aliyun\sdk\core\lib\RpcRequest;
 use aliyun\sdk\core\sign\DefaultSignature;
 
 class AccessKeyCredential extends CredentialsAbstract
 {
-    public function init(Request &$request): void
+    public function init(RpcRequest &$request): void
     {
         if (empty($request->domain())) {
             $request->domain($this->setDomain($request));

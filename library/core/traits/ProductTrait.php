@@ -9,13 +9,14 @@
 
 namespace aliyun\sdk\core\traits;
 
-use aliyun\sdk\core\lib\Client;
+use aliyun\sdk\core\lib\ClientInterface;
+use aliyun\sdk\core\lib\RpcClient;
 use aliyun\sdk\core\lib\ProductInterface;
 
 trait ProductTrait
 {
     /**
-     * @var Client[]
+     * @var ClientInterface[]
      */
     protected static $client = [];
 
@@ -23,14 +24,15 @@ trait ProductTrait
     {
         if (!isset(self::$client[$version])) {
             /*** @var ProductInterface $product ** */
-            $product                = new self($version);
-            self::$client[$version] = new Client();
+            $product = new self($version);
+
+            self::$client[$version] = new RpcClient();
             self::$client[$version]->init($product);
         }
         return self::$client[$version];
     }
 
-    public function __construct($version)
+    public function __construct($version = null)
     {
         $this->version = substr($version, 1, 4) . "-" . substr($version, 5, 2) . "-" . substr($version, 7, 2);
     }

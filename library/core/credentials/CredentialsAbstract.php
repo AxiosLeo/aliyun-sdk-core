@@ -11,7 +11,7 @@ namespace aliyun\sdk\core\credentials;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\UnsupportedRegionIdException;
-use aliyun\sdk\core\lib\Request;
+use aliyun\sdk\core\lib\RpcRequest;
 use aliyun\sdk\core\sign\DefaultSignature;
 use api\tool\Http;
 
@@ -25,7 +25,7 @@ abstract class CredentialsAbstract implements CredentialsInterface
 
     private $region_id;
 
-    protected function setDomain(Request &$request)
+    protected function setDomain(RpcRequest &$request)
     {
         $this->endpoints    = $request->endpoints();
         $this->product      = $request->product();

@@ -20,7 +20,7 @@ use api\tool\lib\HttpResponse;
  *
  * @package aliyun\sdk\core\lib
  */
-class Request
+class RpcRequest
 {
     protected $service_code;
 
