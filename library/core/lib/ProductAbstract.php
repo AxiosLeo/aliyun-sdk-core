@@ -23,7 +23,7 @@ class ProductAbstract implements ProductInterface
 
     protected $protocol;
 
-    protected $sdk_type;
+    protected $sdk_type = "rpc";
 
     public function productId()
     {
