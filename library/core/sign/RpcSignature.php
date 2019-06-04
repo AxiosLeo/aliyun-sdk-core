@@ -10,7 +10,7 @@ namespace aliyun\sdk\core\sign;
 
 use aliyun\sdk\Aliyun;
 
-final class DefaultSignature extends Signature
+final class RpcSignature extends Signature
 {
     public function getSign(): string
     {
