@@ -13,7 +13,6 @@ use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\UnsupportedRegionIdException;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\RoaSignature;
-use function GuzzleHttp\Psr7\build_query;
 
 class RoaCredential extends CredentialsAbstract
 {
@@ -36,7 +35,6 @@ class RoaCredential extends CredentialsAbstract
             $request->headers("Content-Type", $request->headers("Accept") . "; charset=utf-8");
         }
 
-        $request->params("Version", $request->version());
         if (empty($request->region())) {
             throw new UnsupportedRegionIdException($request->product(), $request->region(), $request->endpoints());
         }
@@ -44,13 +42,15 @@ class RoaCredential extends CredentialsAbstract
         foreach ($request->params() as $key => $value) {
             $request->headers($header_prefix . $key, $value);
         }
+        $request->params = [];
 
         $RoaSignature = new RoaSignature();
         $signature    = $RoaSignature->setHeaders($request->headers())
+            ->setProduct($request->product())
             ->setMethod($request->method())
-            ->setPath("/?" . build_query($request->params()))
+            ->setPath($request->curlPath())
             ->getSign();
 
-        $request->headers("Authorization", "acs " . Aliyun::getAccessKeyId() . ":" . $signature);
+        $request->headers("Authorization", strtolower($request->product()) . " " . Aliyun::getAccessKeyId() . ":" . $signature);
     }
 }

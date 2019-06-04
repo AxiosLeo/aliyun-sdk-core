@@ -11,6 +11,8 @@ namespace aliyun\sdk\core\sign;
 
 abstract class Signature
 {
+    protected $product;
+
     protected $headers;
 
     protected $params;
@@ -20,6 +22,12 @@ abstract class Signature
     protected $path;
 
     protected $params_string;
+
+    public function setProduct($product)
+    {
+        $this->product = $product;
+        return $this;
+    }
 
     public function setMethod($method)
     {
