@@ -10,7 +10,7 @@
 namespace aliyun\sdk\core\traits;
 
 use aliyun\sdk\core\lib\ClientInterface;
-use aliyun\sdk\core\lib\RpcClient;
+use aliyun\sdk\core\lib\Client;
 use aliyun\sdk\core\lib\ProductInterface;
 
 trait ProductTrait
@@ -26,7 +26,7 @@ trait ProductTrait
             /*** @var ProductInterface $product ** */
             $product = new self($version);
 
-            self::$client[$version] = new RpcClient();
+            self::$client[$version] = new Client();
             self::$client[$version]->init($product);
         }
         return self::$client[$version];
