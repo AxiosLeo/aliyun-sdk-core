@@ -9,7 +9,7 @@
 
 namespace aliyun\sdk\core\lib;
 
-class RpcClient implements ClientInterface
+class Client implements ClientInterface
 {
     /**
      * @var ProductInterface
@@ -17,14 +17,19 @@ class RpcClient implements ClientInterface
     protected $product;
 
     /**
-     * @var RpcRequest[]
+     * @var Request[]
      */
     protected $instance;
 
     public function __call($action, $arguments)
     {
-        $request = new RpcRequest();
-
+        switch ($this->product->sdk_type()) {
+            case "roa":
+                $request = new RoaRequest();
+                break;
+            default:
+                $request = new RpcRequest();
+        }
         $request->product($this->product->productId());
         $request->version($this->product->versionDate());
         $request->action($action);

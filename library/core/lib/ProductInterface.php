@@ -22,4 +22,6 @@ interface ProductInterface
     public function serviceCode();
 
     public function protocol();
+
+    public function sdk_type();
 }
