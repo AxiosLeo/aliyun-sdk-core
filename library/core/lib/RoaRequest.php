@@ -17,11 +17,20 @@ class RoaRequest extends Request
     public function __construct()
     {
         $this->region = Aliyun::region();
-        $this->params("region-id", Aliyun::region());
         $this->params("signature-method", "HMAC-SHA1");
         $this->params("signature-nonce", SignatureNonce::get("SignatureNonce"));
         $this->params("signature-version", "1.0");
-        $this->params("version", $this->version());
-        dump($this->params());die();
+    }
+
+    public function version($version = null)
+    {
+        $this->params("version", $version);
+        return parent::version($version);
+    }
+
+    public function region($region = null)
+    {
+        $this->params("region-id", Aliyun::region());
+        return parent::region($region);
     }
 }

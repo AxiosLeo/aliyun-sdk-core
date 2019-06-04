@@ -31,7 +31,7 @@ class Request
     protected $endpoints = [];
     protected $protocol  = "http";
 
-    private $params    = [];
+    public $params    = [];
     private $headers   = [];
     private $options   = [];
     private $curl_path = "/";
