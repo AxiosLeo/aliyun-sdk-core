@@ -9,9 +9,9 @@
 
 namespace aliyun\sdk\core\credentials;
 
-use aliyun\sdk\core\lib\RpcRequest;
+use aliyun\sdk\core\lib\Request;
 
 interface CredentialsInterface
 {
-    public function init(RpcRequest &$request): void;
+    public function init(Request &$request): void;
 }
