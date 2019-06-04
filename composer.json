@@ -19,7 +19,8 @@
   },
   "require": {
     "php": ">=7.1",
-    "axios/api-tool": "^1.1"
+    "axios/api-tool": "^1.1",
+    "ralouphie/mimey": "^2.1"
   },
   "require-dev": {
     "symfony/var-dumper": "^4.2",

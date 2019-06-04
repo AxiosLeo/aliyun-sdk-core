@@ -26,11 +26,9 @@ class RoaCredential extends CredentialsAbstract
         }
 
         $request->headers("Date", gmdate($this->dateTimeFormat));
-        $format = [
-            "json" => "application/json",
-            "xml"  => "application/xml"
-        ];
-        $request->headers("Accept", $format[$request->format()]);
+
+        $mimes = new \Mimey\MimeTypes;
+        $request->headers("Accept", $mimes->getMimeType(strtolower($request->format())));
         if (empty($request->headers("Content-Type"))) {
             $request->headers("Content-Type", $request->headers("Accept") . "; charset=utf-8");
         }

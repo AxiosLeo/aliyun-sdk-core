@@ -30,6 +30,8 @@ class RpcCredential extends CredentialsAbstract
         $request->params("SignatureVersion", "1.0");
         $request->params("Timestamp", gmdate("Y-m-d\TH:i:s\Z"));
         $request->params("SignatureNonce", SignatureNonce::get("SignatureNonce"));
+        $mimes = new \Mimey\MimeTypes;
+        $request->headers("Accept", $mimes->getMimeType(strtolower($request->format())));
 
         if (!empty(Aliyun::getSecurityToken())) {
             $request->params("SecurityToken", Aliyun::getSecurityToken());
