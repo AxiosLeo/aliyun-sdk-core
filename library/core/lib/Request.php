@@ -200,15 +200,4 @@ class Request
         }
         return $this->$property;
     }
-
-    public function __call($name, $arguments)
-    {
-        if (false !== strpos($name, "get")) {
-            $name = str_replace("get", "", $name);
-            return $this->params($name);
-        }
-        $name = str_replace("set", "", $name);
-        $this->params($name, $arguments[0]);
-        return $this;
-    }
 }
