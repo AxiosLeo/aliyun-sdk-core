@@ -10,7 +10,6 @@
 namespace aliyun\sdk\core\lib;
 
 use aliyun\sdk\Aliyun;
-use aliyun\sdk\core\help\SignatureNonce;
 
 class RoaRequest extends Request
 {
@@ -18,7 +17,6 @@ class RoaRequest extends Request
     {
         $this->region = Aliyun::region();
         $this->params("signature-method", "HMAC-SHA1");
-        $this->params("signature-nonce", SignatureNonce::get("SignatureNonce"));
         $this->params("signature-version", "1.0");
     }
 

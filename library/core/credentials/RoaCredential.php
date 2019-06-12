@@ -11,6 +11,7 @@ namespace aliyun\sdk\core\credentials;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\UnsupportedRegionIdException;
+use aliyun\sdk\core\help\SignatureNonce;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\RoaSignature;
 
@@ -36,6 +37,8 @@ class RoaCredential extends CredentialsAbstract
         if (empty($request->region())) {
             throw new UnsupportedRegionIdException($request->product(), $request->region(), $request->endpoints());
         }
+
+        $request->params("signature-nonce", SignatureNonce::get("SignatureNonce"));
 
         foreach ($request->params() as $key => $value) {
             $request->headers($header_prefix . $key, $value);
