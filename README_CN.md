@@ -29,7 +29,7 @@ composer require axios/aliyun-sdk-core
 
 ```php
 
-use aliyun\sdk\core\lib\Request;
+use aliyun\sdk\core\lib\RpcRequest;
 
 class Example
 {
@@ -60,13 +60,14 @@ class Example
      */
     public static function client($action = null)
     {
-        $request = new Request();
+        $request = new RpcRequest(); // or RoaRequest
         $request->product(self::$product);
         $request->version(self::$version);
         $request->action($action);
         $request->endpoints(self::$endpoints);
         $request->credential(self::$credential);
         $request->serviceCode(self::$service_code);
+        $request->protocol("https");
         return $request;
     }
 }
