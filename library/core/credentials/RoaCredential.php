@@ -1,7 +1,6 @@
 <?php
 /**
  * @author  : axios
- *
  * @email   : axiosleo@foxmail.com
  * @blog    : http://hanxv.cn
  * @datetime: 2019-05-22 13:45
@@ -14,6 +13,7 @@ use aliyun\sdk\core\exception\UnsupportedRegionIdException;
 use aliyun\sdk\core\help\SignatureNonce;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\RoaSignature;
+use Mimey\MimeTypes;
 
 class RoaCredential extends CredentialsAbstract
 {
@@ -28,7 +28,7 @@ class RoaCredential extends CredentialsAbstract
 
         $request->headers("Date", gmdate($this->dateTimeFormat));
 
-        $mimes = new \Mimey\MimeTypes;
+        $mimes = new MimeTypes;
         $request->headers("Accept", $mimes->getMimeType(strtolower($request->format())));
         if (empty($request->headers("Content-Type"))) {
             $request->headers("Content-Type", $request->headers("Accept") . "; charset=utf-8");
@@ -38,7 +38,7 @@ class RoaCredential extends CredentialsAbstract
             throw new UnsupportedRegionIdException($request->product(), $request->region(), $request->endpoints());
         }
 
-        $request->params("signature-nonce", SignatureNonce::get("SignatureNonce"));
+        $request->params("signature-nonce", SignatureNonce::get(Aliyun::getAccessKeyId() . "SignatureNonce"));
 
         foreach ($request->params() as $key => $value) {
             $request->headers($header_prefix . $key, $value);

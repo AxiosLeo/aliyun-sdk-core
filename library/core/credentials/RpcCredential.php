@@ -1,7 +1,6 @@
 <?php
 /**
  * @author  : axios
- *
  * @email   : axiosleo@foxmail.com
  * @blog    : http://hanxv.cn
  * @datetime: 2019-03-14 15:21
@@ -13,6 +12,7 @@ use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\help\SignatureNonce;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\RpcSignature;
+use Mimey\MimeTypes;
 
 class RpcCredential extends CredentialsAbstract
 {
@@ -29,8 +29,8 @@ class RpcCredential extends CredentialsAbstract
         $request->params('SignatureMethod', "HMAC-SHA1");
         $request->params("SignatureVersion", "1.0");
         $request->params("Timestamp", gmdate("Y-m-d\TH:i:s\Z"));
-        $request->params("SignatureNonce", SignatureNonce::get("SignatureNonce"));
-        $mimes = new \Mimey\MimeTypes;
+        $request->params("SignatureNonce", SignatureNonce::get(Aliyun::getAccessKeyId() . "SignatureNonce"));
+        $mimes = new MimeTypes;
         $request->headers("Accept", $mimes->getMimeType(strtolower($request->format())));
 
         if (!empty(Aliyun::getSecurityToken())) {
