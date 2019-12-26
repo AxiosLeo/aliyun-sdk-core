@@ -26,7 +26,7 @@ class RoaSignature extends Signature
 
         $sign_string = strtoupper($this->method) . $this->headerSeparator;
         foreach ($include as $header_name) {
-            $header      = isset($this->headers[$header_name]) ? $this->headers[$header_name] : "";
+            $header = isset($this->headers[$header_name]) ? $this->headers[$header_name] : "";
             $sign_string .= $header . $this->headerSeparator;
         }
         ksort($this->headers);
@@ -39,6 +39,6 @@ class RoaSignature extends Signature
         }
 
         $sign_string .= $this->path;
-        return $this->hMacSha1($sign_string, Aliyun::getAccessSecret());
+        return $this->encode($sign_string, Aliyun::getAccessSecret());
     }
 }

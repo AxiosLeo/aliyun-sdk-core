@@ -70,8 +70,7 @@ abstract class CredentialsAbstract implements CredentialsInterface
                 $endpoints = $response->getData("Endpoints.Endpoint");
                 foreach ($endpoints as $endpoint) {
                     if (strtolower($this->service_code) == $endpoint["SerivceCode"]) {
-                        $domain = $endpoint["Endpoint"];
-                        return $domain;
+                        return $endpoint["Endpoint"];
                     }
                 }
             }
@@ -91,7 +90,7 @@ abstract class CredentialsAbstract implements CredentialsInterface
             "RegionId"         => "cn-hangzhou",
             "AccessKeyId"      => Aliyun::getAccessKeyId(),
             "Format"           => "JSON",
-            "SignatureMethod"  => "HMAC-SHA1",
+            "SignatureMethod"  => "HMAC-SHA256",
             "SignatureVersion" => "1.0",
             "SignatureNonce"   => $signature_once,
             "Timestamp"        => $timestamp,
@@ -102,11 +101,9 @@ abstract class CredentialsAbstract implements CredentialsInterface
         $DefaultSignature   = new RpcSignature();
         $param["Signature"] = $DefaultSignature->setParams($param)->setMethod("get")->getSign();
 
-        $response = Http::instance()->setDomain("location.aliyuncs.com")
+        return Http::instance()->setDomain("location.aliyuncs.com")
             ->setMethod("GET")
             ->setParam($param)
             ->curl();
-
-        return $response;
     }
 }

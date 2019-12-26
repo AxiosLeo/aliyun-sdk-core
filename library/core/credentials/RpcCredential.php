@@ -26,7 +26,7 @@ class RpcCredential extends CredentialsAbstract
         $request->params('Format', "JSON");
         $request->params('Version', $request->version());
         $request->params('AccessKeyId', Aliyun::getAccessKeyId());
-        $request->params('SignatureMethod', "HMAC-SHA1");
+        $request->params('SignatureMethod', "HMAC-SHA256");
         $request->params("SignatureVersion", "1.0");
         $request->params("Timestamp", gmdate("Y-m-d\TH:i:s\Z"));
         $request->params("SignatureNonce", SignatureNonce::get(Aliyun::getAccessKeyId() . "SignatureNonce"));

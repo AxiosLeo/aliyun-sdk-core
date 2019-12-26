@@ -23,6 +23,8 @@ abstract class Signature
 
     protected $params_string;
 
+    protected $sign_method = "HMAC-SHA256";
+
     public function setProduct($product)
     {
         $this->product = $product;
@@ -38,12 +40,18 @@ abstract class Signature
     public function setHeaders($headers)
     {
         $this->headers = $headers;
+        if (isset($headers["signature-method"])) {
+            $this->sign_method = $headers["signature-method"];
+        }
         return $this;
     }
 
     public function setParams($params)
     {
         $this->params = $params;
+        if (isset($params["SignatureMethod"])) {
+            $this->sign_method = $params["SignatureMethod"];
+        }
         return $this;
     }
 
@@ -55,14 +63,25 @@ abstract class Signature
 
     protected function hMacSha1($string, $key)
     {
-        $signature = base64_encode(hash_hmac('sha1', $string, $key, true));
-        return $signature;
+        return base64_encode(hash_hmac('sha1', $string, $key, true));
     }
 
     protected function hMacSha256($string, $key)
     {
-        $signature = base64_encode(hash_hmac('sha256', $string, $key, true));
-        return $signature;
+        return base64_encode(hash_hmac('sha256', $string, $key, true));
+    }
+
+    protected function encode($string, $key)
+    {
+        switch ($this->sign_method) {
+            case "HMAC-SHA256":
+                return $this->hMacSha256($string, $key);
+                break;
+            case "HMAC-SHA1":
+                return $this->hMacSha1($string, $key);
+                break;
+        }
+        throw new \RuntimeException("Invalid Signature Method : ($this->sign_method)");
     }
 
     abstract public function getSign(): string;
