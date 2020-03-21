@@ -1,11 +1,4 @@
 <?php
-/**
- * @author  : axios
- *
- * @email   : axiosleo@foxmail.com
- * @blog    : http://hanxv.cn
- * @datetime: 2019-04-14 18:56
- */
 
 namespace aliyun\sdk\core\exception;
 

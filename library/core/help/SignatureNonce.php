@@ -1,11 +1,4 @@
 <?php
-/**
- * @author  : axios
- *
- * @email   : axiosleo@foxmail.com
- * @blog    : http://hanxv.cn
- * @datetime: 2019-03-18 15:00
- */
 
 namespace aliyun\sdk\core\help;
 

@@ -24,7 +24,8 @@
   },
   "require-dev": {
     "symfony/var-dumper": "^4.2",
-    "phpunit/phpunit": "^7.5"
+    "phpunit/phpunit": "^7.5",
+    "vlucas/phpdotenv": "^4.1"
   },
   "autoload": {
     "psr-4": {
@@ -37,9 +38,11 @@
     }
   },
   "scripts": {
-    "feature": [
-      "@clearCache",
-      "phpunit --testsuite=Feature --colors=always"
+    "fixer": [
+      "php-cs-fixer fix ./"
+    ],
+    "test": [
+      "phpunit --colors=always"
     ]
   }
 }
