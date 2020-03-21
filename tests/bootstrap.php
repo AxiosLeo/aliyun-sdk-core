@@ -4,5 +4,8 @@ declare(strict_types = 1);
 
 require dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor' . \DIRECTORY_SEPARATOR . 'autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-$dotenv->load();
+$rootPath = dirname(__DIR__) . \DIRECTORY_SEPARATOR;
+if (file_exists($rootPath . '.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable($rootPath);
+    $dotenv->load();
+}
