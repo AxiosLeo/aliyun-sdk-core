@@ -9,6 +9,8 @@ class RpcRequest extends Request
     public function __construct()
     {
         $this->region = Aliyun::region();
+        $this->params('SignatureMethod', "HMAC-SHA1");
+        $this->params("SignatureVersion", "1.0");
     }
 
     public function __call($name, $arguments)

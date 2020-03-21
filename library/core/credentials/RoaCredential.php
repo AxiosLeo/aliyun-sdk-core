@@ -40,7 +40,8 @@ class RoaCredential extends CredentialsAbstract
         $request->params = [];
 
         $RoaSignature = new RoaSignature();
-        $signature    = $RoaSignature->setHeaders($request->headers())
+        $RoaSignature->setSignMethod($request->headers($header_prefix . 'signature-method'));
+        $signature = $RoaSignature->setHeaders($request->headers())
             ->setProduct($request->product())
             ->setMethod($request->method())
             ->setPath($request->curlPath())

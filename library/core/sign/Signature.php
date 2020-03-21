@@ -18,6 +18,12 @@ abstract class Signature
 
     protected $sign_method = "HMAC-SHA256";
 
+    public function setSignMethod($sign_method)
+    {
+        $this->sign_method = $sign_method;
+        return $this;
+    }
+
     public function setProduct($product)
     {
         $this->product = $product;
@@ -33,18 +39,12 @@ abstract class Signature
     public function setHeaders($headers)
     {
         $this->headers = $headers;
-        if (isset($headers["signature-method"])) {
-            $this->sign_method = $headers["signature-method"];
-        }
         return $this;
     }
 
     public function setParams($params)
     {
         $this->params = $params;
-        if (isset($params["SignatureMethod"])) {
-            $this->sign_method = $params["SignatureMethod"];
-        }
         return $this;
     }
 

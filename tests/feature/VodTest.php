@@ -14,10 +14,10 @@ class VodTest extends TestCase
     {
         Aliyun::auth(getenv("ACCESS_KEY_ID"), getenv("ACCESS_KEY_SECRET"));
         Aliyun::region("cn-hangzhou");
-        $data = Vod::V20170321()->GetCategories()
+        $result = Vod::V20170321()->GetCategories()
             ->setCateId(-1)
-            ->request()
-            ->getData("SubCategories.Category");
+            ->request();
+        $data = $result->getData("SubCategories.Category");
         $this->assertEquals(2, count($data));
     }
 }

@@ -9,7 +9,7 @@ class RoaRequest extends Request
     public function __construct()
     {
         $this->region = Aliyun::region();
-        $this->params("signature-method", "HMAC-SHA256");
+        $this->params("signature-method", "HMAC-SHA1");
         $this->params("signature-version", "1.0");
     }
 

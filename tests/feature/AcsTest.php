@@ -20,6 +20,7 @@ class AcsTest extends TestCase
         $request->curlPath("/Product/Ecs");
         $result = $request->method("get")->request();
 
+//        dump($result->getContent());
         $this->assertEquals("ResourceNotFound.AccountBinding", $result->getData('Code'));
     }
 }
