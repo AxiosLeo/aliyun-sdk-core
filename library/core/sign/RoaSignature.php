@@ -1,11 +1,4 @@
 <?php
-/**
- * @author  : axios
- *
- * @email   : axiosleo@foxmail.com
- * @blog    : http://hanxv.cn
- * @datetime: 2019-05-22 13:47
- */
 
 namespace aliyun\sdk\core\sign;
 
@@ -34,7 +27,6 @@ class RoaSignature extends Signature
         foreach ($this->headers as $header_name => $header) {
             if (false !== strpos($header_name, "x-" . strtolower($this->product) . "-")) {
                 $sign_string .= $header_name . ":" . $header . $this->headerSeparator;
-
             }
         }
 

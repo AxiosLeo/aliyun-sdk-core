@@ -1,10 +1,4 @@
 <?php
-/**
- * @author  : axios
- * @email   : axiosleo@foxmail.com
- * @blog    : http://hanxv.cn
- * @datetime: 2019-05-22 13:45
- */
 
 namespace aliyun\sdk\core\credentials;
 

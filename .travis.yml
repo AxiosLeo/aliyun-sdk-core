@@ -1,0 +1,19 @@
+jobs:
+  include:
+    - language: php
+      php: '7.1'
+    - language: php
+      php: '7.2'
+    - language: php
+      php: '7.3'
+    - language: php
+      php: '7.4'
+
+install:
+  - composer --version
+  - composer install -vvv
+script:
+  - composer test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

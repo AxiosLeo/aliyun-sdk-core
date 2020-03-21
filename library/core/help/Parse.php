@@ -1,10 +1,4 @@
 <?php
-/**
- * @author  : axios
- * @email   : axiosleo@foxmail.com
- * @blog    : http://hanxv.cn
- * @datetime: 2018/8/7 14:12
- */
 
 namespace aliyun\sdk\core\help;
 
@@ -19,7 +13,8 @@ class Parse
         return json_decode(
             \GuzzleHttp\json_encode(
                 simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)
-            ), true
+            ),
+            true
         );
     }
 
@@ -73,9 +68,9 @@ class Parse
                     $a = "";
                 }
             }
-        } else if (is_int($array)) {
+        } elseif (is_int($array)) {
             $array = strval($array);
-        } else if (is_null($array)) {
+        } elseif (is_null($array)) {
             $array = "";
         }
         return $array;

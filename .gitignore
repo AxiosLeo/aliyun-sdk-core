@@ -27,3 +27,4 @@ Homestead.json
 .rocketeer/
 test/
 .idea/
+.php_cs.cache

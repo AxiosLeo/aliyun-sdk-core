@@ -1,13 +1,6 @@
 <?php
-/**
- * @author  : Axios
- * @email   : axioscros@aliyun.com
- * @blog    :  http://hanxv.cn
- * @datetime: 2018/2/8 16:35
- */
 
 namespace aliyun\sdk\core\exception;
-
 
 class ClientException extends \Exception
 {
