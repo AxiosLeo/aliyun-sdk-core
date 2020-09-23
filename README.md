@@ -2,8 +2,8 @@ English | [简体中文](./README_CN.md)
 
 > Aliyun Cloud Service SDK Core, composer library.
 
-[![Latest Stable Version](https://poser.pugx.org/axios/aliyun-sdk/v/stable)](https://packagist.org/packages/axios/aliyun-sdk)
-[![License](https://poser.pugx.org/axios/aliyun-sdk/license)](https://packagist.org/packages/axios/aliyun-sdk)
+[![Latest Stable Version](https://poser.pugx.org/axios/aliyun-sdk-core/v/stable)](https://packagist.org/packages/axios/aliyun-sdk-core)
+[![License](https://poser.pugx.org/axios/aliyun-sdk-core/license)](https://packagist.org/packages/axios/aliyun-sdk-core)
 
 > [Aliyun Cloud official documentation center](https://help.aliyun.com/)
 
