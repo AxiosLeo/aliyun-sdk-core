@@ -31,7 +31,7 @@ composer require axios/aliyun-sdk-core
 
 use aliyun\sdk\core\lib\RpcRequest;
 
-class Example
+class AliyunProduct
 {
 
     protected static $product = "<ProductName>";
@@ -88,8 +88,8 @@ require_once __DIR__. "/../vendor/autoload.php";
 * Auth
 
 ```php
-$access_id = "testAccessKeyId";
-$access_secret = "testAccessKeySecret";
+$access_id = "<AccessKeyId>";
+$access_secret = "<AccessKeySecret>";
 
 \aliyun\sdk\Aliyun::auth($access_id, $access_secret);
 ```
@@ -103,7 +103,7 @@ $access_secret = "testAccessKeySecret";
 * request
 
 ```php
-$request = Example::client();
+$request = AliyunProduct::client();
 
 $request->method("POST");
 
