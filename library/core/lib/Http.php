@@ -1,11 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace aliyun\sdk\core\lib;
 
-use axios\tools\ArrayMap;
-use axios\tools\XMLParser;
+use aliyun\sdk\core\help\ArrayMap;
+use aliyun\sdk\core\help\XMLParser;
+use GuzzleHttp\Exception\ClientException;
 use function json_decode;
 use Mimey\MimeTypes;
 
@@ -75,9 +76,14 @@ class Http
 
     public function send($path = '')
     {
-        $client = new \GuzzleHttp\Client($this->options);
+        try {
+            $client = new \GuzzleHttp\Client($this->options);
 
-        $result = $client->request($this->method, $path);
+            $result = $client->request($this->method, $path);
+        } catch (ClientException $e) {
+            $result = $e->getResponse();
+        }
+
         unset($client);
 
         $body     = $result->getBody();
@@ -87,7 +93,7 @@ class Http
 
         $response->headers = $result->getHeaders();
         $content_type      = $result->getHeaderLine('Content-Type');
-        $response->content = (string) $body;
+        $response->content = (string)$body;
         if ($content_type) {
             $mimes = new MimeTypes();
             $tmp   = explode(';', $content_type);

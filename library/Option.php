@@ -2,7 +2,7 @@
 
 namespace aliyun\sdk;
 
-use axios\tools\ArrayMap;
+use aliyun\sdk\core\help\ArrayMap;
 
 class Option
 {
