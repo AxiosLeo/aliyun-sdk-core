@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace aliyun\sdk\core\lib;
 
 use axios\tools\ArrayMap;
 use axios\tools\XMLParser;
-use Mimey\MimeTypes;
 use function json_decode;
+use Mimey\MimeTypes;
 
 class Http
 {
@@ -45,6 +45,7 @@ class Http
             $this->options['headers'] = [];
         }
         $this->options['headers'] = array_merge($this->options['headers'], $headers);
+
         return $this;
     }
 
@@ -68,6 +69,7 @@ class Http
     public function setMethod($method)
     {
         $this->method = strtoupper($method);
+
         return $this;
     }
 
@@ -85,7 +87,7 @@ class Http
 
         $response->headers = $result->getHeaders();
         $content_type      = $result->getHeaderLine('Content-Type');
-        $response->content = (string)$body;
+        $response->content = (string) $body;
         if ($content_type) {
             $mimes = new MimeTypes();
             $tmp   = explode(';', $content_type);
@@ -93,12 +95,13 @@ class Http
                 $mime = $mimes->getExtension($row);
                 if ($mime) {
                     $response->content_type = $mime;
+
                     break;
                 }
             }
-            if ($response->content_type === 'json') {
+            if ('json' === $response->content_type) {
                 $response->data = new ArrayMap(@json_decode($response->content, true));
-            } elseif ($response->content_type === 'xml') {
+            } elseif ('xml' === $response->content_type) {
                 $response->data = new ArrayMap(XMLParser::decode($response->content));
             }
         }

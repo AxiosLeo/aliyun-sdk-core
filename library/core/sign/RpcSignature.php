@@ -19,13 +19,13 @@ final class RpcSignature extends Signature
         $params = [];
         foreach ($this->params as $k => $v) {
             //对参数名称和参数值进行 URL 编码
-            $k = \rawurlencode($k);
-            $v = \rawurlencode($v);
+            $k = rawurlencode($k);
+            $v = rawurlencode($v);
             //对编码后的参数名称和值使用英文等号（=）进行连接
-            \array_push($params, $k . '=' . $v);
+            array_push($params, $k . '=' . $v);
         }
         $this->params_string = implode('&', $params);
 
-        return $this->method . '&' . \rawurlencode('/') . '&' . \rawurlencode($this->params_string);
+        return $this->method . '&' . rawurlencode('/') . '&' . rawurlencode($this->params_string);
     }
 }

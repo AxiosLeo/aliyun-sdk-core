@@ -16,22 +16,22 @@ class RpcCredential extends CredentialsAbstract
             $request->domain($this->setDomain($request));
         }
 
-        $request->params("Action", $request->action());
-        $request->params('Format', "JSON");
+        $request->params('Action', $request->action());
+        $request->params('Format', 'JSON');
         $request->params('Version', $request->version());
         $request->params('AccessKeyId', Aliyun::getAccessKeyId());
-        $request->params("Timestamp", gmdate("Y-m-d\TH:i:s\Z"));
-        $request->params("SignatureNonce", SignatureNonce::get(Aliyun::getAccessKeyId() . "SignatureNonce"));
-        $mimes = new MimeTypes;
-        $request->headers("Accept", $mimes->getMimeType(strtolower($request->format())));
+        $request->params('Timestamp', gmdate('Y-m-d\\TH:i:s\\Z'));
+        $request->params('SignatureNonce', SignatureNonce::get(Aliyun::getAccessKeyId() . 'SignatureNonce'));
+        $mimes = new MimeTypes();
+        $request->headers('Accept', $mimes->getMimeType(strtolower($request->format())));
 
         if (!empty(Aliyun::getSecurityToken())) {
-            $request->params("SecurityToken", Aliyun::getSecurityToken());
+            $request->params('SecurityToken', Aliyun::getSecurityToken());
         }
 
         $DefaultSignature = new RpcSignature();
         $DefaultSignature->setSignMethod($request->params('SignatureMethod'));
-        $request->params("Signature", $DefaultSignature->setParams($request->params())
+        $request->params('Signature', $DefaultSignature->setParams($request->params())
             ->setMethod($request->method())
             ->getSign());
     }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace aliyun\sdk\core\lib;
 
@@ -8,7 +8,7 @@ use Psr\Http\Message\StreamInterface;
 
 class HttpResponse
 {
-    public $guzzle_response = null;
+    public $guzzle_response;
 
     /**
      * @var resource|StreamInterface|string

@@ -16,7 +16,7 @@ class ProductAbstract implements ProductInterface
 
     protected $protocol;
 
-    protected $sdk_type = "rpc";
+    protected $sdk_type = 'rpc';
 
     public function productId()
     {
@@ -46,13 +46,14 @@ class ProductAbstract implements ProductInterface
     public function protocol()
     {
         if (empty($this->protocol)) {
-            $this->protocol = "http";
+            $this->protocol = 'http';
         }
+
         return $this->protocol;
     }
 
     public function sdk_type()
     {
-        return empty($this->sdk_type) ? "rpc" : $this->sdk_type;
+        return empty($this->sdk_type) ? 'rpc' : $this->sdk_type;
     }
 }

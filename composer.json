@@ -20,7 +20,7 @@
   "require": {
     "php": ">=7.1",
     "ralouphie/mimey": "^2.1",
-    "guzzlehttp/guzzle": "^7.2",
+    "guzzlehttp/guzzle": "^5|^6|^7.2",
     "axios/tools": "^1.0"
   },
   "require-dev": {

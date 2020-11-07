@@ -17,8 +17,9 @@ class Client implements ClientInterface
     public function __call($action, $arguments)
     {
         switch ($this->product->sdk_type()) {
-            case "roa":
+            case 'roa':
                 $request = new RoaRequest();
+
                 break;
             default:
                 $request = new RpcRequest();
