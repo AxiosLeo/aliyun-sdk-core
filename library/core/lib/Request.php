@@ -5,8 +5,6 @@ namespace aliyun\sdk\core\lib;
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\credentials\CredentialsInterface;
 use aliyun\sdk\core\exception\InvalidParameterException;
-use api\tool\Http;
-use api\tool\lib\HttpResponse;
 
 /**
  * Class Request
@@ -176,12 +174,14 @@ class Request
         }
         $credentials->init($this);
 
-        $response = Http::instance()->setMethod($this->method)
-            ->setOption($this->options)
+        $http = new Http($this->options);
+
+        $response = $http->setMethod($this->method)
             ->setDomain($this->protocol . "://" . $this->domain)
-            ->setHeader($this->headers)
+            ->setHeaders($this->headers)
             ->setParam($this->params)
-            ->curl($this->curl_path);
+            ->send($this->curl_path);
+        unset($http);
 
         return Aliyun::response($response);
     }

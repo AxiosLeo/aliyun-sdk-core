@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types = 1);
 
 namespace aliyun\sdk\tests\feature;
 
@@ -18,6 +18,6 @@ class VodTest extends TestCase
             ->setCateId(-1)
             ->request();
         $data = $result->getData("SubCategories.Category");
-        $this->assertEquals(2, count($data));
+        $this->assertEquals(3, count($data));
     }
 }

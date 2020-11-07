@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types = 1);
 
 namespace aliyun\sdk\tests\feature;
 
@@ -17,7 +17,6 @@ class KmsTest extends TestCase
         $request = Kms::V20160120()->ListKeys();
         $request->protocol("https");
         $result = $request->request();
-
         $this->assertEquals(36, strlen($result->getData('RequestId')));
     }
 }
