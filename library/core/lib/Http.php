@@ -7,6 +7,7 @@ namespace aliyun\sdk\core\lib;
 use aliyun\sdk\core\help\ArrayMap;
 use aliyun\sdk\core\help\XMLParser;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use function json_decode;
 use Mimey\MimeTypes;
 
@@ -81,6 +82,8 @@ class Http
 
             $result = $client->request($this->method, $path);
         } catch (ClientException $e) {
+            $result = $e->getResponse();
+        } catch (ServerException $e) {
             $result = $e->getResponse();
         }
 
