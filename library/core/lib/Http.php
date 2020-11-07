@@ -8,7 +8,6 @@ use aliyun\sdk\core\help\ArrayMap;
 use aliyun\sdk\core\help\XMLParser;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
-use function json_decode;
 use Mimey\MimeTypes;
 
 class Http

@@ -2,6 +2,7 @@
 
 > 阿里云服务 SDK ，支持 composer 扩展
 
+[![Travis Build Status](https://travis-ci.com/AxiosCros/aliyun-sdk-core.svg?branch=master)](https://travis-ci.com/AxiosCros/aliyun-sdk-core)
 [![Latest Stable Version](https://poser.pugx.org/axios/aliyun-sdk/v/stable)](https://packagist.org/packages/axios/aliyun-sdk)
 [![License](https://poser.pugx.org/axios/aliyun-sdk/license)](https://packagist.org/packages/axios/aliyun-sdk)
 
