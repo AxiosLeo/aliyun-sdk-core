@@ -116,7 +116,7 @@ $response = $request->params("key", "value")
 * 查看回调结果
 
 ```php
-$result = $response->getContent();
+$result = $response->getData();
 ```
 
 ---

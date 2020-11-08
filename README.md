@@ -117,7 +117,7 @@ $response = $request->params("key", "value")
 * Get Response Content
 
 ```php
-$result = $response->getContent();
+$result = $response->getData();
 ```
 
 > [Request Option](http://docs.guzzlephp.org/en/stable/request-options.html)
