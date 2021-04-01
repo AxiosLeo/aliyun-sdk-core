@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace aliyun\sdk\core\lib;
 
@@ -95,7 +95,7 @@ class Http
 
         $response->headers = $result->getHeaders();
         $content_type      = $result->getHeaderLine('Content-Type');
-        $response->content = (string)$body;
+        $response->content = (string) $body;
         if ($content_type) {
             $mimes = new MimeTypes();
             $tmp   = explode(';', $content_type);

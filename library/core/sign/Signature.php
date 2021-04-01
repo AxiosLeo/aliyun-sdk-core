@@ -77,6 +77,7 @@ abstract class Signature
         switch ($this->sign_method) {
             case 'HMAC-SHA256':
                 return $this->hMacSha256($string, $key);
+
             case 'HMAC-SHA1':
                 return $this->hMacSha1($string, $key);
         }

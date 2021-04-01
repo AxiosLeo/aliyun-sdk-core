@@ -21,6 +21,7 @@ class Client implements ClientInterface
                 $request = new RoaRequest();
 
                 break;
+
             default:
                 $request = new RpcRequest();
         }

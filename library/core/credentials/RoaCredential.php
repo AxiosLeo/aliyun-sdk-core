@@ -25,7 +25,7 @@ class RoaCredential extends CredentialsAbstract
         $mimes = new MimeTypes();
         $request->headers('Accept', $mimes->getMimeType(strtolower($request->format())));
         if (empty($request->headers('Content-Type'))) {
-            $request->headers('Content-Type', $request->headers('Accept') . '; charset=utf-8');
+            $request->headers('Content-Type', 'application/x-www-form-urlencoded');
         }
 
         if (empty($request->region())) {

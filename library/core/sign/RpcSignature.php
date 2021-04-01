@@ -22,7 +22,7 @@ final class RpcSignature extends Signature
             $k = rawurlencode($k);
             $v = rawurlencode($v);
             //对编码后的参数名称和值使用英文等号（=）进行连接
-            array_push($params, $k . '=' . $v);
+            $params[] = $k . '=' . $v;
         }
         $this->params_string = implode('&', $params);
 
