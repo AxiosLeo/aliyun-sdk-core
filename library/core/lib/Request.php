@@ -173,7 +173,7 @@ class Request
     {
         $credentials = $this->credential($credentials);
         if (!$credentials instanceof CredentialsInterface) {
-            throw new InvalidParameterException("{$credentials} must be 'CredentialsInterface'");
+            throw new InvalidParameterException("credentials instance must be 'CredentialsInterface'");
         }
         $credentials->init($this);
 
