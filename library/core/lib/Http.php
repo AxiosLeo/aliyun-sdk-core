@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace aliyun\sdk\core\lib;
 
 use aliyun\sdk\core\help\ArrayMap;
+use aliyun\sdk\core\help\MimeTypes;
 use aliyun\sdk\core\help\XMLParser;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
-use Mimey\MimeTypes;
 
 class Http
 {

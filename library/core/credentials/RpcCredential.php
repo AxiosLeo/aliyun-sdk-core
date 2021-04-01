@@ -3,10 +3,10 @@
 namespace aliyun\sdk\core\credentials;
 
 use aliyun\sdk\Aliyun;
+use aliyun\sdk\core\help\MimeTypes;
 use aliyun\sdk\core\help\SignatureNonce;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\RpcSignature;
-use Mimey\MimeTypes;
 
 class RpcCredential extends CredentialsAbstract
 {
@@ -23,7 +23,7 @@ class RpcCredential extends CredentialsAbstract
         $request->params('Timestamp', gmdate('Y-m-d\\TH:i:s\\Z'));
         $request->params('SignatureNonce', SignatureNonce::get(Aliyun::getAccessKeyId() . 'SignatureNonce'));
         $mimes = new MimeTypes();
-        $request->headers('Accept', $mimes->getMimeType(strtolower($request->format())));
+        $request->headers('Accept', $mimes->getMime(strtolower($request->format())));
 
         if (!empty(Aliyun::getSecurityToken())) {
             $request->params('SecurityToken', Aliyun::getSecurityToken());

@@ -4,10 +4,10 @@ namespace aliyun\sdk\core\credentials;
 
 use aliyun\sdk\Aliyun;
 use aliyun\sdk\core\exception\UnsupportedRegionIdException;
+use aliyun\sdk\core\help\MimeTypes;
 use aliyun\sdk\core\help\SignatureNonce;
 use aliyun\sdk\core\lib\Request;
 use aliyun\sdk\core\sign\RoaSignature;
-use Mimey\MimeTypes;
 
 class RoaCredential extends CredentialsAbstract
 {
@@ -23,7 +23,7 @@ class RoaCredential extends CredentialsAbstract
         $request->headers('Date', gmdate($this->dateTimeFormat));
 
         $mimes = new MimeTypes();
-        $request->headers('Accept', $mimes->getMimeType(strtolower($request->format())));
+        $request->headers('Accept', $mimes->getMime(strtolower($request->format())));
         if (empty($request->headers('Content-Type'))) {
             $request->headers('Content-Type', 'application/x-www-form-urlencoded');
         }
