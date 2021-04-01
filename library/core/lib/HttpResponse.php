@@ -27,6 +27,6 @@ class HttpResponse
 
     public function getData($key = null)
     {
-        return null === $this->data ? null : $this->data->get($key);
+        return null === $this->data ? $this->content : $this->data->get($key);
     }
 }
