@@ -2,7 +2,7 @@ English | [简体中文](./README_CN.md)
 
 > Aliyun Cloud Service SDK Core, composer library.
 
-[![Travis Build Status](https://travis-ci.com/AxiosCros/aliyun-sdk-core.svg?branch=master)](https://travis-ci.com/AxiosCros/aliyun-sdk-core)
+[![CI Build Status](https://github.com/AxiosCros/aliyun-sdk-core/workflows/CI/badge.svg)](https://github.com/AxiosCros/aliyun-sdk-core/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/axios/aliyun-sdk-core/v/stable)](https://packagist.org/packages/axios/aliyun-sdk-core)
 [![License](https://poser.pugx.org/axios/aliyun-sdk-core/license)](https://packagist.org/packages/axios/aliyun-sdk-core)
 

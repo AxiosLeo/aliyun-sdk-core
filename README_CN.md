@@ -2,7 +2,7 @@
 
 > 阿里云服务 SDK ，支持 composer 扩展
 
-[![Travis Build Status](https://travis-ci.com/AxiosCros/aliyun-sdk-core.svg?branch=master)](https://travis-ci.com/AxiosCros/aliyun-sdk-core)
+[![CI Build Status](https://github.com/AxiosCros/aliyun-sdk-core/workflows/CI/badge.svg)](https://github.com/AxiosCros/aliyun-sdk-core/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/axios/aliyun-sdk/v/stable)](https://packagist.org/packages/axios/aliyun-sdk)
 [![License](https://poser.pugx.org/axios/aliyun-sdk/license)](https://packagist.org/packages/axios/aliyun-sdk)
 
@@ -120,8 +120,6 @@ $result = $response->getData();
 ```
 
 ---
-
-
 
 > [请求选项](https://guzzle-cn.readthedocs.io/zh_CN/latest/request-options.html)
 
